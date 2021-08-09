@@ -344,8 +344,8 @@ bindsym $mod+Shift+Tab exec change_keyboard_layout.sh
 # bindsym --release XF86AudioRaiseVolume exec pkill -SIGRTMIN+10 i3blocks
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 ######################
 # Print screen binds #
