@@ -63,7 +63,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = SFNS Display:size=12;2
-font-1 = JetBrainsMono Nerd Font:size=12;2
+font-1 = FiraCode Nerd Font:size=12;2
 
 modules-left = i3
 modules-center = popup-calendar
