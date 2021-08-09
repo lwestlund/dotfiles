@@ -22,6 +22,9 @@ alias autoclean='sudo pacman -Sc'
 # Remove unneeded dependencies
 alias autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
+# List 25 largest installed packages
+alias topsize="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | head -25"
+
 ################
 # maim aliases #
 ################
