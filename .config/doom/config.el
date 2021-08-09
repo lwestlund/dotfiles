@@ -39,11 +39,6 @@
 (after! magit
   (magit-delta-mode +1))
 
-;; Press ctrl+alt+tab to format region with clang-format.
-;; Not that useful as saving a buffer formats it first.
-(load! "/usr/share/clang/clang-format.el")
-(global-set-key [C-M-tab] 'clang-format-region)
-
 ;; My custom C-mode indentation settings.
 (defun my-c-mode-common-hook ()
   (setq c-basic-offset 2)
