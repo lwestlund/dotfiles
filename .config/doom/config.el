@@ -4,7 +4,7 @@
 
 (setq
  ;; Font configuration.
- doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
+ doom-font (font-spec :family "JetBrains Mono NL" :size 13)
 
  ;; Decrease delay until which-key pops up.
  which-key-idle-delay 0.3
