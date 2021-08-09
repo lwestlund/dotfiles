@@ -20,7 +20,6 @@ source $ZDOTDIR/completion.zsh      # Completion configuration.
 source $ZDOTDIR/keybinds.zsh        # Keybinds, what did you expect?
 source $ZDOTDIR/aliases.zsh         # Straight up aliases.
 source $ZDOTDIR/abbreviations.zsh   # Like aliases, but explicit.
-source $ZDOTDIR/pip_completion.zsh
 source $ZDOTDIR/prompt.zsh          # Terminal prompt.
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=#00ff00,bold'
