@@ -76,7 +76,7 @@ prompt_status_hook () {
         local staged=""
         local NUM_STAGED=$(git diff --staged 2> /dev/null | wc -l)
         if [[ ${NUM_STAGED} -gt 0 ]]; then
-            staged=" ${FG_GREEN}${BULLET_LARGE}%f"
+            staged="${FG_GREEN}${BULLET_LARGE}%f"
         fi
 
         local unstaged=""
