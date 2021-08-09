@@ -28,9 +28,13 @@
  lsp-ui-peek-list-width 50
  )
 
-;; Do not format the default list of files and python on save.
+;; Do not format on save in the following modes (plus the default ones).
 (after! format
-  (setq +format-on-save-enabled-modes (append +format-on-save-enabled-modes '(python-mode cmake-mode))))
+  (setq +format-on-save-enabled-modes
+        (append +format-on-save-enabled-modes
+                '(python-mode
+                  cmake-mode
+                  yaml-mode))))
 
 (after! magit
   (magit-delta-mode +1))
