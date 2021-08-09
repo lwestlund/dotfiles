@@ -46,7 +46,7 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Shift+q kill
 
 # Open rofi.
-bindsym $mod+d exec "rofi -theme obsidian -modi combi,ssh -combi-modi window,drun -show combi"
+bindsym $mod+d exec "rofi_launcher.sh"
 
 # change focus
 bindsym $mod+$left focus left
