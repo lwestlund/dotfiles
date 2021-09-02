@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+rofi_command="rofi -theme theme/powermenu.rasi"
+
+### Options ###
+power_off="\tShutdown"
+reboot="\tReboot"
+lock="\tLock"
+suspend="鈴\tSleep"
+log_out="\tLogout"
+# Options passed to rofi.
+options="$power_off\n$reboot\n$lock\n$suspend\n$log_out"
+
+if [[ "$(i3-msg nop)" = '[{"success":true}]' ]]; then
+    wm="i3"
+else
+    wm=""
+fi
+
+option=$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)
+case "$option" in
+    *Shutdown)
+        echo "poweroff"
+        systemctl poweroff
+        ;;
+    *Reboot)
+        echo "reboot"
+        systemctl reboot
+        ;;
+    *Lock)
+        echo "zzz"
+        zzz
+        ;;
+    *Sleep)
+        echo "suspend"
+        "$DOTFILES_BIN/dbus_spotify" Pause
+        systemctl suspend
+        ;;
+    *Logout)
+        echo "logout"
+        case "$wm" in
+            i3)
+                i3-msg exit
+                ;;
+            bspwm)
+                bspc quit
+                ;;
+            *)
+                echo "${0##*/}: Unknown or no wm detected '$wm'"
+                ;;
+        esac
+        ;;
+esac

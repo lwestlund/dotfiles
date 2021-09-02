@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+# A simple profiler that measures and prints the time to do something.
+
+# Usage:
+#   autoload -Uz prof
+#   zle -N prof
+#
+#   prof my_command --even-with --args
+#
+# Note: Since it prints the duration of the thing, nesting multiple
+# calls to prof will not yield correct results as printing takes to
+# much time.
+
+emulate -L zsh
+
+local start=$(date +%s%N)
+eval "$@"
+local end=$(date +%s%N)
+local duration=$(((end-start) / 1000000))
+print "$@ : $duration ms"

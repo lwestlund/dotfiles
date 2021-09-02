@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+case "$1" in
+     Next)
+          ;&
+     Pause)
+          ;&
+     Play)
+          ;&
+     PlayPause)
+          ;&
+     Previous)
+          dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1" >/dev/null
+          ;;
+     *)
+          echo "${0##*/}: Unknown command '$1'".
+esac

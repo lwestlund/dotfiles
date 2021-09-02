@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [[ ! $(command -v python) ]]; then
+    return
+fi
+
+python_command='
+import importlib
+imports = [
+    ("numpy", "np"),
+    ("math", None),
+]
+exceptions = []
+for module, name in imports:
+    try:
+        if name is not None:
+            exec(f"import {module} as {name}")
+        else:
+            exec(f"import {module}")
+    except ImportError as e:
+        exceptions.append(e.msg)
+import os
+os.system("clear")
+print("\n".join(exceptions))
+'
+
+i3_retval=$(i3-msg nop)
+if [[ $i3_retval = '[{"success":true}]' ]]; then
+    i3-msg floating enable > /dev/null && python -ic "$python_command"
+fi

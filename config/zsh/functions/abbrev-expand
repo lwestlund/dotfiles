@@ -1,0 +1,72 @@
+#!/usr/bin/env zsh
+
+# Expand an abbreviation to something long that you don't want to type.
+
+# Abbreviations can be expanded upon by adding key-value-pairs to the `abbrevs`
+# associative array, e.g.
+#
+#   typeset -Ag abbrevs  # Keeps the old abbreviations in the associative array.
+#   abbrevs+=("myabbrev" "myexpandedabbreviation")
+
+# To use:
+#   autoload -Uz abbrev-expand
+#   zle -N abbrev-expand-magic-space abbrev-expand
+#   zle -N abbrev-expand-and-accept abbrev-expand
+#   zle -N abbrev-expand-or-complete abbrev-expand
+# and optionally bind to some keys:
+#   bindkey " " abbrev-expand-magic-space
+#   bindkey "^M" abbrev-expand-and-accept
+#   bindkey "^I" abbrev-expand-or-complete
+
+autoload -Uz expand-dots
+zle -N expand-dots
+
+emulate -L zsh
+setopt extendedglob
+
+typeset -Ag abbrevs
+abbrevs+=(
+    "zource"    "source $ZDOTDIR/.zshrc"
+
+    # Pipes
+    "awkp"      "| awk '{print \$__CURSOR__}'"
+    "pgr"       "| grep"
+)
+
+expand-abbrev() {
+    # Docs: http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion
+    # %% : extract the last word from LBUFFER matching a reasonable abbreviation into abbrev.
+    local MATCH
+    LBUFFER=${LBUFFER%%(#m)[_[:alnum:]]#}
+    # Lookup abbrev in abbreviations.
+    readonly command=${abbrevs[$MATCH]}
+    # If we found a command, add it to LBUFFER, otherwise add $abbrev back.
+    LBUFFER+=${command:-$MATCH}
+
+    if [[ "${command}" =~ "__CURSOR__" ]]; then
+        # If the expanded abbreviation has a `__CURSOR__`, place us there.
+        RBUFFER=${LBUFFER[(ws:__CURSOR__:)2]}
+        LBUFFER=${LBUFFER[(ws:__CURSOR__:)1]}
+    fi
+}
+
+case $WIDGET in
+    abbrev-expand-magic-space)
+        zle expand-dots
+        expand-abbrev
+        if zle -l autopair-insert; then
+            zle autopair-insert
+        else
+            zle magic-space
+        fi
+        ;;
+    abbrev-expand-and-accept)
+        zle expand-dots
+        expand-abbrev
+        zle accept-line
+        ;;
+    abbrev-expand-or-complete)
+        zle expand-dots
+        zle expand-or-complete
+        ;;
+esac

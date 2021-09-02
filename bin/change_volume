@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Arbitrary but unique message id.
+APP_NAME="change_volume"
+MSG_ID="999001"
+
+_notify_show() {
+    local notify_str=""
+    local volume_icon=""
+    case $1 in
+        "audio")
+            local isMuted
+            isMuted=$(pacmd list-sinks | grep -A 15 '* index' | awk '/muted:/{ print $2 }')
+            if [[ ${isMuted} == "yes" ]]; then
+                volume_icon="audio-volume-muted-symbolic.symbolic"
+                notify_str="Volume muted"
+            else
+                local volume
+                volume=$(
+                    pacmd list-sinks |
+                        grep -A 15 '* index' |
+                        awk '/^\s*volume:/{ print }' |
+                        awk 'match($0, /[0-9]{2,3}%/) { print substr($0, RSTART, RLENGTH-1) }'
+                      )
+                notify_str="Volume ${volume} %"
+                if [[ ${volume} -le 33 ]]; then
+                    volume_icon="audio-volume-low-symbolic.symbolic"
+                elif [[ ${volume} -le 66 ]]; then
+                    volume_icon="audio-volume-medium-symbolic.symbolic"
+                else
+                    volume_icon="audio-volume-high-symbolic.symbolic"
+                fi
+            fi
+            ;;
+        "microphone")
+            local isMuted
+            isMuted=$(pacmd list-sources | grep -A 15 '* index' | awk '/muted:/{ print $2 }')
+            if [[ ${isMuted} == "yes" ]]; then
+                volume_icon="microphone-sensitivity-muted-symbolic.symbolic"
+                notify_str="Microphone muted"
+            else
+                volume_icon="microphone-sensitivity-high-symbolic.symbolic"
+                notify_str="Microphone on"
+            fi
+            ;;
+    esac
+    dunstify --appname="${APP_NAME}" --urgency=low --icon="${volume_icon}" --replace="${MSG_ID}" "${notify_str}"
+}
+
+# Change the volume using PulseAudio.
+if [[ "$#" -ne 1 ]]; then
+    echo "Exactly one argument of the action to perform is required"
+    exit 1
+else
+    if [[ "$1" =~ ^(\+|-)[0-9]+\%$ ]]; then
+        pactl set-sink-mute @DEFAULT_SINK@ false
+        pactl set-sink-volume @DEFAULT_SINK@ "$1"
+        _notify_show "audio"
+    elif [[ "$1" == "audio-toggle" ]]; then
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        _notify_show "audio"
+    elif [[ "$1" =~ mic(rophone)?-toggle ]]; then
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        _notify_show "microphone"
+    else
+        echo "Error: bad format of argument '$1'"
+        exit 2
+    fi
+fi
+
+# TODO: Maybe add libcanberra to i3.nix so that we can play a sound when (ironically)
+# adjusting the sound level.
+# Play volume changed sound.
+# canberra-gtk-play --id=audio-volume-change --description=$APP_NAME

@@ -1,0 +1,19 @@
+[user]
+	name = Love Westlund Gotby
+	email = love.westlund.gotby@disroot.org
+[core]
+[init]
+	defaultBranch = develop
+[github]
+	user = lovewestlundgotby
+[commit]
+	verbose = true
+[push]
+	default = current
+[pull]
+	ff = only
+	rebase = true
+[alias]
+	log1 = log --graph --format="format:%C(yellow)%h%C(reset) %C(cyan)(%cr)%C(reset) %s %C(dim white) - %aN %C(green)%d"
+	log2 = log --graph --format="format:%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n          %C(dim white)- %an%C(reset)"
+	log3 = log --graph --format="format:%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)"

@@ -1,0 +1,107 @@
+/* -*- mode: css; -*- */
+configuration {
+    /* icon-theme: ""; */
+    cycle: true;
+    disable-history:  false;
+
+    matching: "normal";
+
+    /* Vim-similar C-j/C-k for down/up motion in rofi. */
+    kb-accept-entry: "Return,Control+m,KP_Enter";
+    kb-row-down: "Down,Control+n,Control+j";
+    kb-remove-to-eol: "";
+    kb-row-up: "Up,Control+p,Control+k";
+}
+
+* {
+    accent:     #88C0D0;
+    bg:         #1e2029;
+    bg-light:   #1c1c1c;
+    bg-focus:   #282a36;
+    bg-dark:    #181a23;
+    fg:         #bbc2cf;
+    fg-list:    #bbc2cf;
+
+    /* text-font:      "Inter 14"; */
+    text-font:      "Cantarell 14, FiraCode Nerd Font 14";
+
+    background-color:   transparent;
+    text-color:         @fg;
+    font:               @text-font;
+    border-color:       @bg-dark;
+}
+
+/* Layout */
+window {
+    location: center;
+    anchor:   center;
+    width: 800;
+    border: 1px;
+    border-radius: 6;
+    spacing: 0;
+
+    children:  [ inputbar, listview ];
+}
+
+inputbar {
+    children: [ textbox-icon, prompt, entry ];
+    spacing: 1;
+    border: 0 0 0 0;
+}
+textbox-icon, prompt {
+    expand: false;
+    border-color: @bg-dark;
+}
+textbox-icon {
+    padding: 8 12 0 12;
+}
+entry, element {
+    padding: 10 13 10 13;
+}
+
+listview {
+    columns: 1;
+    fixed-height: false;
+    dynamic: false;
+    scrollbar: true;
+    lines: 12;
+    spacing: 1;
+}
+scrollbar {
+    handle-width: 1px;
+}
+
+/* Looks */
+scrollbar {
+    background-color: @bg-dark;
+    handle-color: @accent;
+    border-color: @bg-dark;
+}
+listview, inputbar {
+    background-color: @bg-dark;
+}
+textbox-icon, prompt {
+    text-color: @accent;
+    background-color: @bg-focus;
+}
+entry {
+    background-color: @bg-focus;
+    placeholder: " Type to search...";
+    placeholder-color: gray;
+}
+textbox-icon {
+    font: @icon-font;
+}
+element {
+    background-color: @bg;
+    border-color: @bg-dark;
+}
+element-icon {
+    padding: 4 11 0 0;
+}
+element-text {
+    highlight: underline #88C0D0;
+}
+element selected {
+    background-color: @bg-dark;
+}

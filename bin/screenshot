@@ -1,0 +1,54 @@
+#!/usr/bin/env cached-nix-shell
+#! nix-shell -i bash -p maim xclip xdotool
+
+set -euo pipefail
+
+# A screenshot utility.
+#
+# Usage:
+#   screenshot STORAGE [REGION]
+#
+# where STORAGE is one of
+#   * copy -- to copy image to clipboard
+#   * save -- to save image in ~/Pictures/screenshot_<date>.png
+#
+# and the optional REGION is one of
+#   * current -- to use the currently focused window
+#   * selection -- to select a region on the screen
+#   * all -- to use the full display, this includes multiple displays, and is the default REGION.
+
+# Remember to remove tmpfile on script exit.
+trap 'rm -f "$tmpfile"' EXIT
+tmpfile=$(mktemp)
+
+if [ $# -gt 1 ]; then
+    case "$2" in
+       current)
+          maim -ui "$(xdotool getactivewindow)" > "$tmpfile"
+          ;;
+       selection)
+          maim -us > "$tmpfile"
+          ;;
+       all)
+          maim -u > "$tmpfile"
+          ;;
+       *)
+          echo "Unknown region '$2'"
+          exit 1
+          ;;
+    esac
+else
+    maim -u > "$tmpfile"
+fi
+
+case "$1" in
+   copy)
+      xclip -selection clipboard -t image/png "$tmpfile" &&
+          dunstify "Screenshot taken" "Copied to clipboard"
+      ;;
+   save)
+      mkdir -p "$HOME/Pictures"
+      tee "$HOME/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png" < "$tmpfile" > /dev/null &&
+          dunstify "Screenshot taken" "Saved to ~/Pictures"
+      ;;
+esac

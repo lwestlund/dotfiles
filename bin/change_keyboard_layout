@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Usage: map a key to run this script, it will then switch between the layouts
+# stated below.
+
+current_layout=$(setxkbmap -query | awk '
+    BEGIN{layout=""}
+    /^layout/{layout=$2}
+END{printf("%s\n",layout)}')
+
+if [[ $current_layout == 'us' ]]; then
+    setxkbmap se
+elif [[ $current_layout == 'se' ]]; then
+    setxkbmap us
+fi

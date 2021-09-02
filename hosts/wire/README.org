@@ -1,0 +1,37 @@
+#+TITLE: Wire
+
+* Overview
+My at home desktop, used for most things programming, gaming, and so on.
+Thanks for Proton, Gaben.
+
+* Installation
+** Create partitions
+#+begin_src sh
+# Samsung 840 Evo 500 GB
+parted /dev/sdb -- mklabel gpt
+parted /dev/sdb -- mkpart ESP fat32 1MiB 512MiB
+# Mark ESP partition as bootable from.
+parted set 1 boot on
+# Add a 200 GiB partition for /
+parted /dev/sdb -- mkpart primary 512MiB 200GiB
+# and the reset for /home.
+parted /dev/sdb -- mkpart primary 200GiB 100%
+#+end_src
+
+** Format partitions
+#+begin_src sh
+mkfs.fat -F32 -n "BOOT" /dev/sdb1
+mkfs.ext4 -L "nixos" /dev/sdb2
+mkfs.ext4 -L "home" /dev/sdb3
+#+end_src
+
+** Mount partitions
+#+begin_src sh
+mount /dev/sda2 /mnt
+
+mkdir -p /mnt/{boot,home}
+mount /dev/sdb1 /mnt/boot
+mount /dev/sdb3 /mnt/home
+#+end_src
+
+** Now get back to generic instructions in repo root!

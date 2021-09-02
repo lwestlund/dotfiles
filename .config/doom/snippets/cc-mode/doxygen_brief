@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: Doxygen brief
-# key: brief
-# condition: t
-# --
-/// @brief $0

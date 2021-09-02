@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: TODO
-# key: todo
-# condition: t
-# --
-// TODO(lovewg): $0

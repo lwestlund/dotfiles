@@ -1,0 +1,42 @@
+#+TITLE: Lithium
+
+* Overview
+Laptop running Linux, used for everyday stuff as well as coding.
+
+This config was written on this machine!
+
+* Installation
+** Create partitions
+#+begin_src sh
+# Samsung 850 Pro 256 GB
+parted /dev/sda -- mklabel gpt
+parted /dev/sda -- mkpart "EFI system partition" fat32 1MiB 512MiB
+# Mark ESP partition as bootable from.
+parted set 1 boot on
+# Add swap space the size of RAM used for hibernation.
+parted /dev/sda -- mkpart "swap partition" linux-swap 0.5GiB 8.5GiB
+# Add a 50 GiB partition for /.
+parted /dev/sda -- mkpart "root partition" ext4 8.5GiB 58.5GiB
+# Use the rest for /home.
+parted /dev/sda -- mkpart "home partition" ext4 58.5GiB 100%
+#+end_src
+
+** Format partitions
+#+begin_src sh
+mkfs.fat -F32 -n "boot" /dev/sda1
+mkswap /dev/sda2
+swapon /dev/sda2
+mkfs.ext4 -L "nixos" /dev/sda3
+mkfs.ext4 -L "home" /dev/sda4
+#+end_src
+
+** Mount partitions
+#+begin_src sh
+mount /dev/sda3 /mnt
+
+mkdir -p /mnt/{boot,home}
+mount /dev/sda1 /mnt/boot
+mount /dev/sda4 /mnt/home
+#+end_src
+
+** Now get back to generic instructions in repo root!
