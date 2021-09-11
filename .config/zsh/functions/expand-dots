@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# Expand three or more consecutive dots into a proper relative path,
+# e.g. "...." will be expanded to "../../..".
+
+# To use:
+#   autoload -Uz expand-dots
+#   zle -N expand-dots
+# and optionally bind to some key:
+#   bindkey "<key>" expand-dots
+
+emulate -L zsh
+setopt extendedglob
+
+if [[ ${LBUFFER} =~ "\.\.\.+" ]]; then
+  LBUFFER=${LBUFFER:fs%...%../..}
+fi

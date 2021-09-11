@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+# Expand three or more consecutive dots into a proper relative path,
+# e.g. "...." will be expanded to "../../..", and do expand-or-complete after that.
+
+# To use:
+#   autoload -Uz dots-expand-or-complete
+#   zle -N dots-expand-or-complete
+# and optionally bind to some key:
+#   bindkey "<key>" dots-expand-or-complete
+
+autoload -Uz expand-dots
+zle -N expand-dots
+
+zle expand-dots
+zle .expand-or-complete
