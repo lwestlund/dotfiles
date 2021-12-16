@@ -53,6 +53,9 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 bindkey '^[[H' beginning-of-line                # Home key.
 bindkey '^[[F' end-of-line                      # End key.
 
+bindkey -M vicmd '^[[3~' delete-char
+bindkey '^[[3~' delete-char                     # Delete key.
+
 bindkey '^[[A' history-substring-search-up      # Arrow up searches upwards in history by substring.
 bindkey '^[[B' history-substring-search-down    # Arrow down searches downwards in history by substring.
 
