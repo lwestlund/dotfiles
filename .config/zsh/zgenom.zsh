@@ -11,7 +11,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load junegunn/fzf shell
     zgenom load skywind3000/z.lua
-    [ -z "$SSH_CONNECTION" ] && zgenom load zdharma/fast-syntax-highlighting
+    [ -z "$SSH_CONNECTION" ] && zgenom load zdharma-continuum/fast-syntax-highlighting
     zgenom save
 fi
 
