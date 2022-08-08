@@ -56,6 +56,11 @@ bindkey '^[[F' end-of-line                      # End key.
 bindkey -M vicmd '^[[3~' delete-char
 bindkey '^[[3~' delete-char                     # Delete key.
 
+bindkey '^[[1;5D' backward-word                 # Ctrl + left arrow key.
+bindkey '^[[1;5C' forward-word                  # Ctrl + right arrow key.
+bindkey '^[[1;5A' beginning-of-line             # Ctrl + up arrow key.
+bindkey '^[[1;5B' end-of-line                   # Ctrl + down arrow key.
+
 bindkey '^[[A' history-substring-search-up      # Arrow up searches upwards in history by substring.
 bindkey '^[[B' history-substring-search-down    # Arrow down searches downwards in history by substring.
 
