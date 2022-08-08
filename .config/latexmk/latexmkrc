@@ -1,0 +1,2 @@
+$pdf_mode = 5; # Use xelatex to generate pdf.
+$pdf_previewer = 'start zathura %O %S'
