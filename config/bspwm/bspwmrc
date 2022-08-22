@@ -1,0 +1,38 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+function set_monitors {
+    if [[ $(hostnamectl --static) == "wire" ]]; then
+        xrandr \
+            --output DP-4 --primary --mode 1920x1080 --rate 120 --pos 0x0 --rotate normal \
+            --output DVI-I-1 --mode 1920x1080 --rate 120 --pos 1920x0
+    fi
+}
+
+bspc monitor DP-4    -d I II III IV V
+bspc monitor DVI-I-1 -d VI VII VIII IX X
+
+bspc config border_width         1
+bspc config window_gap          10
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config single_monocle       true
+
+bspc config focus_follows_pointer true
+
+bspc rule --add Emacs state=tiled
+bspc rule --add "*:scratch" state=floating sticky=on rectangle=1000x460+480+0
+# Maybe this will work some day if Spotify decides to update their client to set
+# the window class name earlier.
+bspc rule --add Spotify desktop=^10
+bspc rule --add leagueclientux.exe desktop=^5
+bspc rule --add "league of legends.exe" desktop=^5
+
+feh --no-xinerama --bg-fill $HOME/Pictures/wallpaper.*
+pkill picom; picom --config $HOME/.config/picom/picom.conf &
+~/.config/polybar/launch.sh
+dunst &
+pgrep -x pasystray > /dev/null || pasystray &

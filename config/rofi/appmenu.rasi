@@ -1,0 +1,11 @@
+/* -*- mode: css; -*- */
+
+@import "obsidian.rasi"
+
+textbox-icon {
+  str: "  ";
+}
+
+prompt {
+  enabled: false;
+}
