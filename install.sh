@@ -2,7 +2,8 @@
 
 set -e
 
-repo=$(git rev-parse --show-toplevel)
+rel_dir=$(dirname $0)
+repo=$(readlink -f $rel_dir)
 readonly repo
 
 ln -sf $repo/zshenv            ~/.zshenv
