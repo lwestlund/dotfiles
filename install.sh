@@ -5,7 +5,7 @@ set -e
 repo=$(git rev-parse --show-toplevel)
 readonly repo
 
-ln -sf $repo/.zshenv            ~/.zshenv
+ln -sf $repo/zshenv            ~/.zshenv
 ln -sf $repo/config/zsh        ~/.config/
 ln -sf $repo/config/alacritty  ~/.config/
 ln -sf $repo/config/git        ~/.config/
