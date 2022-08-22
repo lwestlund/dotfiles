@@ -6,6 +6,7 @@ packages=(
     bash-completion
     bash-language-server
     bat
+    bspwm
     clang
     cmake
     discord
@@ -23,6 +24,8 @@ packages=(
     htop
     languagetool
     libreoffice-fresh
+    lightdm
+    lightdm-mini-greeter
     make
     man-db
     man-pages
@@ -52,6 +55,7 @@ packages=(
     shotgun
     signal-desktop
     spotify
+    sxhkd
     openssh
     ttf-jetbrains-mono
     ttf-font-awesome
@@ -61,6 +65,7 @@ packages=(
     vdpauinfo
     wmctrl
     xclip
+    xorg
     zip
     zsh
     )
