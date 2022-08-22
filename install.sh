@@ -17,3 +17,6 @@ ln -sf $repo/config/sxhkd      ~/.config/
 ln -sf $repo/config/rofi       ~/.config/
 ln -sf $repo/config/picom      ~/.config/
 ln -sf $repo/config/dunst      ~/.config/
+
+mkdir -p ~/.local/bin
+ln -sf $repo/bin/* ~/.local/bin/

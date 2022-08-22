@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+current_layout=$(setxkbmap -query | awk \
+    'BEGIN{layout="";variant=""}
+     /^layout/{layout=$2}
+     /^variant/{variant=" ("$2")"}
+     END{printf("%s%s\n",layout,variant)}'
+)
+
+if [[ $current_layout == 'us' ]]; then
+    setxkbmap se
+    #echo "should set se"
+elif [[ $current_layout == 'se' ]]; then
+    setxkbmap us
+    #echo "should set us"
+fi

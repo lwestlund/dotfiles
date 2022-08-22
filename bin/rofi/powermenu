@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+rofi_command="rofi -theme powermenu"
+
+### Options ###
+power_off="<span font='FiraCode Nerd Font 20'></span>     Shutdown"
+reboot="<span font='FiraCode Nerd Font 20'></span>     Reboot"
+lock="<span font='FiraCode Nerd Font 20'></span>     Lock"
+suspend="<span font='FiraCode Nerd Font 20'>鈴</span>     Sleep"
+log_out="<span font='FiraCode Nerd Font 20'></span>     Logout"
+# Variable passed to rofi
+options="$power_off\n$reboot\n$lock\n$suspend\n$log_out"
+
+case "$(echo -e "$options" | $rofi_command -dmenu -selected-row 2 -markup-rows)" in
+    $power_off)
+        systemctl poweroff
+        ;;
+    $reboot)
+        systemctl reboot
+        ;;
+    $lock)
+        # TODO(lovew): Fix a locker.
+        echo "lock"
+        # zzz
+        ;;
+    $suspend)
+        dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
+        systemctl suspend
+        ;;
+    $log_out)
+        bspc quit
+        ;;
+esac
