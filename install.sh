@@ -20,3 +20,5 @@ ln -sf $repo/config/dunst      ~/.config/
 
 mkdir -p ~/.local/bin
 ln -sf $repo/bin/* ~/.local/bin/
+
+sudo cp $repo/xorg/* /etc/X11/xorg.conf.d/
