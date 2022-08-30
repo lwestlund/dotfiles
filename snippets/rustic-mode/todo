@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: TODO
+# uuid:
+# key: todo
+# condition: t
+# --
+// TODO(lovew): $0
