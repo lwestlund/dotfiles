@@ -36,6 +36,8 @@
                   cmake-mode
                   yaml-mode))))
 
+(add-hook! 'latex-mode-hook 'turn-on-auto-fill)
+
 (after! magit
   (magit-delta-mode +1))
 
