@@ -154,6 +154,7 @@
         ;;+jupyter         ; ipython/jupyter support for babel
         +pandoc          ; export-with-pandoc support
         ;;+pomodoro        ; be fruitful with the tomato technique
+        +roam2
         +present)          ; using org-mode for presentations
        ;;php               ; perl's insecure younger brother
        ;; plantuml          ; diagrams for confusing people more

@@ -41,6 +41,81 @@
 (after! magit
   (magit-delta-mode +1))
 
+;;; :lang org
+(setq +org-roam-auto-backlinks-buffer t
+      org-directory "~/org/"
+      org-roam-directory org-directory
+      org-roam-dailies-directory "journal/"
+      org-roam-db-location (concat org-roam-directory ".org_roam.db")
+      org-agenda-files (list org-directory)
+      )
+
+(add-hook! 'org-mode-hook 'turn-on-auto-fill)
+
+(after! org
+  (setq org-startup-folded 'showeverything
+        org-ellipsis " [...]"
+        org-capture-templates
+        '(("t" "Todo" entry (file+headline "todo.org" "Unsorted")
+           "* [ ] %?\n%i\n%a"
+           :prepend t)
+          ("n" "Personal notes" entry
+           (file+headline +org-capture-notes-file "Inbox")
+           "* %u %?\n%i\n%a"
+           :prepend t)
+          ("j" "Journal" entry
+           (file+olp+datetree +org-capture-journal-file)
+           "* %U %?\n%i\n%a"
+           :prepend t)
+          ("p" "Templates for projects")
+          ("pt" "Project-local todo" entry
+           (file+headline +org-capture-project-todo-file "Inbox")
+           "* TODO %?\n%i\n%a"
+           :prepend t)
+          ("pn" "Project-local notes" entry
+           (file+headline +org-capture-project-notes-file "Inbox")
+           "* %U %?\n%i\n%a"
+           :prepend t)
+          ("pc" "Project-local changelog" entry
+           (file+headline +org-capture-project-changelog-file "Unreleased")
+           "* %U %?\n%i\n%a"
+           :prepend t)
+          ("o" "Centralized templates for projects")
+          ("ot" "Project todo" entry #'+org-capture-central-project-todo-file "* TODO %?\n %i\n %a" :heading "Tasks" :prepend nil)
+          ("on" "Project notes" entry #'+org-capture-central-project-notes-file "* %U %?\n %i\n %a" :heading "Notes" :prepend t)
+          ("oc" "Project changelog" entry #'+org-capture-central-project-changelog-file "* %U %?\n %i\n %a" :heading "Changelog" :prepend t))
+        ))
+
+(after! org-roam
+  (setq
+   org-roam-capture-templates
+   `(
+     ("b" "book" plain
+      ,(format "#+title: ${title}\n%%[%s/template/book.org]" org-roam-directory)
+      :target (file "book/%<%Y%m%d%H%M%S>-${slug}.org")
+      :unnarrowed t)
+     ("c" "contact" plain
+      ,(format "#+title: ${title}\n%%[%s/template/contact.org]" org-roam-directory)
+      :target (file "contact/%<%Y%m%d%H%M%S>-${slug}.org")
+      :unnarrowed t)
+     ("d" "default" plain
+      ,(format "#+title: ${title}\n%%[%s/template/default.org]" org-roam-directory)
+      :target (file "%<%Y%m%d%H%M%S>-${slug}.org")
+      :unnarrowed t)
+     ("h" "how-to" plain
+      ,(format "#+title: ${title}\n%%[%s/template/how_to.org]" org-roam-directory)
+      :target (file "how-to/%<%Y%m%d%H%M%S>-${slug}.org")
+      :unnarrowed t)
+     )
+   org-roam-dailies-capture-templates
+   '(("d" "default" entry
+      "* %?"
+      :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%B %d, %Y>\n\n")
+      :jump-to-captured t)
+     )
+   )
+  )
+
 ;; My custom C-mode indentation settings.
 (defun my-c-mode-common-hook ()
   (setq c-basic-offset 2)
