@@ -91,19 +91,19 @@
    org-roam-capture-templates
    `(
      ("b" "book" plain
-      ,(format "#+title: ${title}\n%%[%s/template/book.org]" org-roam-directory)
+      ,(format "#+title: ${title}\n%%[%s/template/book.org]" doom-user-dir)
       :target (file "book/%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      ("c" "contact" plain
-      ,(format "#+title: ${title}\n%%[%s/template/contact.org]" org-roam-directory)
+      ,(format "#+title: ${title}\n%%[%s/template/contact.org]" doom-user-dir)
       :target (file "contact/%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      ("d" "default" plain
-      ,(format "#+title: ${title}\n%%[%s/template/default.org]" org-roam-directory)
+      ,(format "#+title: ${title}\n%%[%s/template/default.org]" doom-user-dir)
       :target (file "%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      ("h" "how-to" plain
-      ,(format "#+title: ${title}\n%%[%s/template/how_to.org]" org-roam-directory)
+      ,(format "#+title: ${title}\n%%[%s/template/how_to.org]" doom-user-dir)
       :target (file "how-to/%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      )

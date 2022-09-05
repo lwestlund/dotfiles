@@ -1,0 +1,8 @@
+* Info
+Author: %^{Author}
+Year: %^{Year}
+Genre: %^{Genre}
+Recommended/found by: %^{Recommended by}
+
+* Summary
+%?
