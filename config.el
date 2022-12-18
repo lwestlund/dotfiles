@@ -42,12 +42,13 @@
   (magit-delta-mode +1))
 
 ;;; :lang org
-(setq +org-roam-auto-backlinks-buffer t
+(setq +org-roam-auto-backlinks-buffer nil
       org-directory "~/org/"
       org-roam-directory org-directory
       org-roam-dailies-directory "journal/"
       org-roam-db-location (concat org-roam-directory ".org_roam.db")
-      org-agenda-files (list org-directory)
+      org-agenda-files (flatten-list (list org-directory (mapcar (lambda (subdir) (concat org-directory subdir))
+                                                                 ["book" "contact"])))
       )
 
 (add-hook! 'org-mode-hook 'turn-on-auto-fill)
@@ -57,7 +58,7 @@
         org-ellipsis " [...]"
         org-capture-templates
         '(("t" "Todo" entry (file+headline "todo.org" "Unsorted")
-           "* [ ] %?\n%i\n%a"
+           "* TODO %?"
            :prepend t)
           ("n" "Personal notes" entry
            (file+headline +org-capture-notes-file "Inbox")
@@ -91,19 +92,19 @@
    org-roam-capture-templates
    `(
      ("b" "book" plain
-      ,(format "#+title: ${title}\n%%[%s/template/book.org]" doom-user-dir)
+      ,(format "#+title: ${title}\n%%[%s/org_capture_templates/book.org]" doom-user-dir)
       :target (file "book/%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      ("c" "contact" plain
-      ,(format "#+title: ${title}\n%%[%s/template/contact.org]" doom-user-dir)
+      ,(format "#+title: ${title}\n%%[%s/org_capture_templates/contact.org]" doom-user-dir)
       :target (file "contact/%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      ("d" "default" plain
-      ,(format "#+title: ${title}\n%%[%s/template/default.org]" doom-user-dir)
+      ,(format "#+title: ${title}\n%%[%s/org_capture_templates/default.org]" doom-user-dir)
       :target (file "%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      ("h" "how-to" plain
-      ,(format "#+title: ${title}\n%%[%s/template/how_to.org]" doom-user-dir)
+      ,(format "#+title: ${title}\n%%[%s/org_capture_templates/how_to.org]" doom-user-dir)
       :target (file "how-to/%<%Y%m%d%H%M%S>-${slug}.org")
       :unnarrowed t)
      )
