@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-window_id=$(wmctrl -lx | grep scratch.Alacritty | awk '{print $1}')
+window_id=$(wmctrl -lx | grep scratch.scratch | awk '{print $1}')
 if [[ -n $window_id ]]; then
     bspc node $window_id --flag hidden --focus
 else

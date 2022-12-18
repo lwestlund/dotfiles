@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+window_id=$(wmctrl -lx | grep bitwarden.Bitwarden | awk '{print $1}')
+if [[ -n $window_id ]]; then
+    bspc node $window_id --flag hidden --focus
+else
+    # Spawn a bitwarden instance.
+    bitwarden-desktop &
+fi

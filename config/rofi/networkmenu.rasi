@@ -1,0 +1,7 @@
+/* -*- mode: css; -*- */
+
+@import "obsidian.rasi"
+
+* {
+  font: "JetBrainsMonoNL Nerd Font 14";
+}

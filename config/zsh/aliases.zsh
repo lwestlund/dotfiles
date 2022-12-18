@@ -1,6 +1,6 @@
 alias path='echo -e ${PATH//:/\\n}'
 alias fpath='echo -e ${FPATH//:/\\n}'
-alias mkdir='mkdir -pv'
+alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
 alias df='df --human-readable'

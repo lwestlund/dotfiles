@@ -65,6 +65,3 @@ else
         exit 2
     fi
 fi
-
-# Play volume changed sound.
-canberra-gtk-play --id=audio-volume-change --description=$APP_NAME

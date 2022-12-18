@@ -3,7 +3,7 @@ if [[ $TERM == dumb ]]; then
 fi
 
 # Treat these characters as part of a word.
-WORDCHARS='_-*?[]~&.;!#$%^(){}<>'
+WORDCHARS='_-*?[]~&;!#$%^(){}<>'
 
 # Completion
 setopt HASH_LIST_ALL        # Avoid false reports of spelling errors.

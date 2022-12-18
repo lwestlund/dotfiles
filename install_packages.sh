@@ -6,6 +6,7 @@ packages=(
     bash-completion
     bash-language-server
     bat
+    betterlockscreen
     bspwm
     clang
     cmake
@@ -46,6 +47,7 @@ packages=(
     python-lsp-server
     python-pyflakes
     qbittorrent
+    redshift
     reflector
     ripgrep
     rofi
@@ -62,6 +64,7 @@ packages=(
     ttf-lato
     ttf-liberation
     unzip
+    usbutils
     vdpauinfo
     wmctrl
     xclip
@@ -101,9 +104,14 @@ if [[ $(hostnamectl --static) == "wire" ]]; then
     )
 elif [[ $(hostnamectl --static) == "netbook" ]]; then
     packages+=(
+        fprintd
+        libinput-gestures
+        sof-firmware
+        tlp
         vulkan-devel
         vulkan-intel
         vulkan-icd-loader
+        xorg-xbacklight
     )
 fi
 

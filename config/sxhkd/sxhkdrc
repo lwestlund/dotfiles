@@ -120,6 +120,9 @@ XF86AudioMute
 XF86Audio{Play,Prev,Next}
 	playerctl {play-pause,previous,next}
 
+XF86MonBrightness{Down,Up}
+	xbacklight {-dec,-inc} 10
+
 ctrl + alt + k
     change_keyboard_layout
 
