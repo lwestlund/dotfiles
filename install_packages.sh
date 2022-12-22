@@ -115,12 +115,12 @@ elif [[ $(hostnamectl --static) == "netbook" ]]; then
     )
 fi
 
-if [[ ! $(command -v yay) ]]; then
+if [[ ! $(command -v paru) ]]; then
     sudo pacman -S --noconfirm --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git /tmp/yay
-    pushd /tmp/yay/
+    git clone https://aur.archlinux.org/paru.git /tmp/paru
+    pushd /tmp/paru/
     makepkg -si
     popd
 fi
 
-yay -S ${packages[@]}
+paru -S ${packages[@]}
