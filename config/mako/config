@@ -1,0 +1,8 @@
+font=SF Pro Display
+background-color=#272727f8
+outer-margin=20
+padding=10
+border-color=#00ccddee
+border-radius=4
+default-timeout=10000
+layer=overlay
