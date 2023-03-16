@@ -26,8 +26,8 @@
                      ],
     // Modules configuration
     "wlr/workspaces": {
+        "all-outputs": false,
         "disable-scroll": true,
-        "all-outputs": true,
         "format": "{icon}",
         "on-click": "activate",
         // "format-icons": {
