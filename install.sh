@@ -19,10 +19,16 @@ function install_config() {
     link_config latexmk
     link_config mako
     link_config nvim
+    link_config systemd/user/hyprland-session.target
+    link_config systemd/user/polkit-kde.service
     link_config waybar
     link_config zsh
 }
 install_config
+
+systemctl --user enable mako.service
+systemctl --user enable polkit-kde.service
+systemctl --user enable waybar.service
 
 mkdir -p ~/.local/bin
 ln -sf $repo/bin/* ~/.local/bin/
@@ -32,3 +38,5 @@ sudo cp $repo/xorg/* /etc/X11/xorg.conf.d/
 sudo cp $repo/etc/tmpfiles.d/charge_threshold.conf /etc/tmpfiles.d/
 
 ln -sf $repo/clang-format   $HOME/.clang-format
+
+echo "Config install complete. Reboot or logout and login if making changes to systemd/user."

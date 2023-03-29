@@ -11,7 +11,6 @@ packages=(
     clang
     cmake
     discord
-    dunst
     emacs-nativecomp
     exa
     fd
@@ -28,6 +27,7 @@ packages=(
     lightdm
     lightdm-mini-greeter
     make
+    mako
     man-db
     man-pages
     mkinitcpio
@@ -39,6 +39,7 @@ packages=(
     patch
     picom
     playerctl
+    polkit-kde-agent
     polybar
     python
     python-black
