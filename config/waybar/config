@@ -28,7 +28,7 @@
     "wlr/workspaces": {
         "all-outputs": false,
         "disable-scroll": true,
-        "format": "{icon}",
+        "format": "{name}",
         "on-click": "activate",
         "sort-by-number": true,
         // "format-icons": {
@@ -115,12 +115,11 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "thermal-zone": 6,
+        "input-filename": "temp",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "{temperatureC} °C {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -156,14 +155,14 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth-muted": "󰖁 {icon} {format_source}",
         "format-muted": "󰖁 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "󰋎 ",
             "phone": "",
             "portable": "",
             "car": "",
