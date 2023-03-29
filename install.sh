@@ -16,16 +16,19 @@ function install_config() {
     link_config bat
     link_config git
     link_config hypr
+    link_config kanshi
     link_config latexmk
     link_config mako
     link_config nvim
     link_config systemd/user/hyprland-session.target
+    link_config systemd/user/kanshi.service
     link_config systemd/user/polkit-kde.service
     link_config waybar
     link_config zsh
 }
 install_config
 
+systemctl --user enable kanshi.service
 systemctl --user enable mako.service
 systemctl --user enable polkit-kde.service
 systemctl --user enable waybar.service
