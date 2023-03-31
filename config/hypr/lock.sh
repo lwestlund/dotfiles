@@ -1,6 +1,11 @@
 #!/usr/bin/env sh
 
+set -e
+
+playerctl pause
+
 swaylock \
+    --daemonize \
     --image ~/Pictures/lock_screen.jpg \
     --font "SF Pro Display" \
     --font-size 16 \
@@ -10,3 +15,5 @@ swaylock \
     --indicator-y-position 880 \
     --inside-color 014c00aa \
     --layout-bg-color 01010177
+
+sleep 1 && hyprctl dispatch dpms off
