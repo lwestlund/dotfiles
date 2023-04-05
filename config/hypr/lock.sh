@@ -2,7 +2,7 @@
 
 set -e
 
-playerctl pause
+playerctl pause || true
 
 swaylock \
     --daemonize \
