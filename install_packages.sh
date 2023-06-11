@@ -143,9 +143,16 @@ if [[ $(hostnamectl --static) == "wire" ]]; then
 elif [[ $(hostnamectl --static) == "netbook" ]]; then
     packages+=(
         ${wm_hyprland[@]}
+        blueman
+        bluez
+        bluez-utils
+        brightnessctl
         emacs-gcc-wayland-devel-bin
         fprintd
         libinput-gestures
+        network-manager-applet
+        pavucontrol
+        slack-bin
         sof-firmware
         tlp
         vulkan-devel
