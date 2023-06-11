@@ -59,8 +59,8 @@ packages=(
     ripgrep
     rofi
     rsync
-    rustup
     shotgun
+    rustup              # Rust toolchain installer
     signal-desktop
     spotify
     sxhkd
@@ -77,7 +77,7 @@ packages=(
     xclip
     xorg
     zip
-    zsh
+    zsh                 # My shell of choice
     )
 
 if [[ $(hostnamectl --static) == "wire" ]]; then
