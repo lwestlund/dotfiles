@@ -5,7 +5,7 @@
 [core]
 
 [init]
-	defaultBranch = develop
+	defaultBranch = main
 
 [pull]
 	ff = only
