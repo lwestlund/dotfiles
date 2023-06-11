@@ -160,6 +160,11 @@ elif [[ $(hostnamectl --static) == "netbook" ]]; then
         vulkan-icd-loader
         xorg-xbacklight
     )
+    if [[ $(lscpu | grep "Vendor ID") =~ GenuineIntel ]]; then
+        packages+=(
+            intel-media-driver  # For hardware video acceleration on iGPU.
+        )
+    fi
 fi
 
 if [[ ! $(command -v paru) ]]; then
