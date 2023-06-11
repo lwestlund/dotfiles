@@ -15,6 +15,7 @@ packages=(
     cmake
     discord
     emacs-nativecomp
+    dust
     emote
     exa
     fd
