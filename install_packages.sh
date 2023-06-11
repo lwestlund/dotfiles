@@ -111,7 +111,7 @@ packages=(
     zsh                 # My shell of choice
     )
 
-if [[ $(hostnamectl --static) == "wire" ]]; then
+if [[ $(cat /etc/hostname) == "wire" ]]; then
     packages+=(
         ${wm_bspwm[@]}
         audacity
@@ -140,7 +140,7 @@ if [[ $(hostnamectl --static) == "wire" ]]; then
         winetricks
         zathura
     )
-elif [[ $(hostnamectl --static) == "netbook" ]]; then
+elif [[ $(cat /etc/hostname) == "netbook" ]]; then
     packages+=(
         ${wm_hyprland[@]}
         blueman
