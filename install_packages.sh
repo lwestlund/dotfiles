@@ -40,6 +40,9 @@ packages=(
     nerd-fonts-fira-code
     networkmanager
     networkmanager-openvpn
+    noto-fonts
+    noto-fonts-emoji # How else would you be able to write 🔥?
+    otf-san-francisco
     patch
     picom
     playerctl
