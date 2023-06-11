@@ -42,6 +42,7 @@ packages=(
     networkmanager-openvpn
     noto-fonts
     noto-fonts-emoji # How else would you be able to write 🔥?
+    openssh
     otf-san-francisco
     patch
     picom
@@ -65,7 +66,6 @@ packages=(
     signal-desktop
     spotify
     sxhkd
-    openssh
     ttf-jetbrains-mono
     ttf-font-awesome
     ttf-iosevka-nerd
