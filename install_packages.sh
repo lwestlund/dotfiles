@@ -60,7 +60,6 @@ packages=(
     ripgrep
     rofi
     rsync
-    rust-analyzer
     rustup
     shotgun
     signal-desktop
