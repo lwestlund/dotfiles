@@ -8,6 +8,7 @@ packages=(
     bat
     betterlockscreen
     bspwm
+    bitwarden
     clang
     cmake
     discord
