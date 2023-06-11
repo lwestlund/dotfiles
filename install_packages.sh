@@ -74,6 +74,7 @@ packages=(
     ttf-liberation
     unzip
     usbutils
+    uutils-coreutils    # Coreutils written in Rust
     vdpauinfo
     wmctrl
     xclip
