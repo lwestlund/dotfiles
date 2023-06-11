@@ -12,6 +12,7 @@ packages=(
     cmake
     discord
     emacs-nativecomp
+    emote
     exa
     fd
     feh
