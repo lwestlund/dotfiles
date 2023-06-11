@@ -1,5 +1,5 @@
 typeset -U PATH path
-path=(~/scripts/bin ~/.local/bin ~/.local/bin/rofi ~/.config/emacs/bin/ $path)
+path=(~/.local/bin ~/.local/bin/rofi ~/.config/emacs/bin/ $path)
 
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
