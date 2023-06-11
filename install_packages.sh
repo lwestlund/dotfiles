@@ -46,6 +46,8 @@ packages=(
     otf-san-francisco
     patch
     picom
+    pipewire
+    pipewire-pulse
     playerctl
     polkit-kde-agent
     polybar
@@ -76,6 +78,7 @@ packages=(
     usbutils
     uutils-coreutils    # Coreutils written in Rust
     vdpauinfo
+    wireplumber
     wmctrl
     xclip
     xorg
@@ -99,8 +102,6 @@ if [[ $(hostnamectl --static) == "wire" ]]; then
         ocl-icd
         open-adventure
         perl-image-exiftool
-        pipewire
-        pipewire-alsa
         shaderc
         steam
         texlab
