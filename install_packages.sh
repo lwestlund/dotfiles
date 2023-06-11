@@ -37,7 +37,6 @@ packages=(
     mkinitcpio
     mpv
     neovim
-    nerd-fonts-fira-code
     networkmanager
     networkmanager-openvpn
     noto-fonts
@@ -68,6 +67,7 @@ packages=(
     openssh
     ttf-jetbrains-mono
     ttf-font-awesome
+    ttf-iosevka-nerd
     ttf-lato
     ttf-liberation
     unzip
