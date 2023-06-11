@@ -1,5 +1,44 @@
 #!/usr/bin/env sh
 
+wm_hyprland=(
+    hyprland-git                    # The thing that we are all here for
+
+    hyprpaper                       # Wallpaper setter
+    kanshi                          # Automatic monitor handling
+    mako                            # Notification daemon
+    qt5-wayland
+    qt6-wayland
+    sddm                            # Display manager
+    swaylock                        # Screen locker
+    waybar-hyprland-git             # A decent status bra
+    wofi                            # An application launcher
+    xdg-desktop-portal-hyprland-git
+
+    # Screen shots
+    grim                # Capture
+    slurp               # Capture selection
+    wl-clipboard        # Capture to clipboard
+)
+
+wm_bspwm=(
+    bspwm
+    sxhkd               # Hot key daemon used with BSPWM
+
+    betterlockscreen    # Screen locker
+    dunst               # Notification daemon
+    picom               # Compositor
+    polybar             # A status bar
+    redshift            # Decreases monitor blue light
+    rofi                # An application launcher
+    sddm                # Display manager
+    xclip
+    xorg
+
+    # Screen shots
+    hacksaw             # Screenshot selection tool
+    shotgun             # Screenshot util
+)
+
 packages=(
     alacritty
     aspell
@@ -8,13 +47,10 @@ packages=(
     bash-completion
     bash-language-server
     bat
-    betterlockscreen
-    bspwm
     bitwarden
     clang
     cmake
     discord
-    emacs-nativecomp
     dust
     emote
     exa
@@ -25,14 +61,10 @@ packages=(
     gcc
     git
     git-delta
-    hacksaw
     htop
     languagetool
     libreoffice-fresh
-    lightdm
-    lightdm-mini-greeter
     make
-    mako
     man-db
     man-pages
     mkinitcpio
@@ -45,12 +77,10 @@ packages=(
     openssh
     otf-san-francisco
     patch
-    picom
     pipewire
     pipewire-pulse
     playerctl
     polkit-kde-agent
-    polybar
     python
     python-black
     python-pip
@@ -58,17 +88,13 @@ packages=(
     python-lsp-server
     python-pyflakes
     qbittorrent
-    redshift
     reflector
     ripgrep
-    rofi
     rsync
-    shotgun
     rustup              # Rust toolchain installer
     sccache             # Shared compiler cache
     signal-desktop
     spotify
-    sxhkd
     ttf-jetbrains-mono
     ttf-font-awesome
     ttf-iosevka-nerd
@@ -81,18 +107,18 @@ packages=(
     wget
     wireplumber
     wmctrl
-    xclip
-    xorg
     zip
     zsh                 # My shell of choice
     )
 
 if [[ $(hostnamectl --static) == "wire" ]]; then
     packages+=(
+        ${wm_bspwm[@]}
         audacity
         audio-recorder
         calibre
         ckb-next
+        emacs-nativecomp
         gimp
         lib32-pipewire
         lutris
@@ -116,6 +142,8 @@ if [[ $(hostnamectl --static) == "wire" ]]; then
     )
 elif [[ $(hostnamectl --static) == "netbook" ]]; then
     packages+=(
+        ${wm_hyprland[@]}
+        emacs-gcc-wayland-devel-bin
         fprintd
         libinput-gestures
         sof-firmware
