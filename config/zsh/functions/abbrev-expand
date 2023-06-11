@@ -90,6 +90,9 @@ abbrevs+=(
     "gstl"  "git stash list"
     "gstp"  "git stash pop"
     "gsts"  "git stash show"
+
+    "userctl"   "systemctl --user"
+    "usrctl"    "systemctl --user"
 )
 
 expand-abbrev() {
