@@ -78,6 +78,7 @@ packages=(
     usbutils
     uutils-coreutils    # Coreutils written in Rust
     vdpauinfo
+    wget
     wireplumber
     wmctrl
     xclip
