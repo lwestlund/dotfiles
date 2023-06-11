@@ -63,6 +63,7 @@ packages=(
     rsync
     shotgun
     rustup              # Rust toolchain installer
+    sccache             # Shared compiler cache
     signal-desktop
     spotify
     sxhkd
