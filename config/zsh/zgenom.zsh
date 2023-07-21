@@ -10,10 +10,11 @@ if ! zgenom saved; then
     zgenom load hlissner/zsh-autopair autopair.zsh
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load junegunn/fzf shell
-    zgenom load skywind3000/z.lua
     [ -z "$SSH_CONNECTION" ] && zgenom load zdharma-continuum/fast-syntax-highlighting
     zgenom save
 fi
 
 # TODO: Is this run twice?
 autopair-init
+
+eval "$(zoxide init zsh)"

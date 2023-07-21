@@ -64,6 +64,10 @@ else
     alias lr='ls -R'
 fi
 
+if command -v zoxide > /dev/null; then
+  alias cd="z"
+fi
+
 # Yank/paste to/from system clipboard.
 alias y='xclip -selection clipboard -in'
 alias p='xclip -selection clipboard -out'

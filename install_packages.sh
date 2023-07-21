@@ -108,6 +108,7 @@ packages=(
     wireplumber
     wmctrl
     zip
+    zoxide              # A smarter cd command
     zsh                 # My shell of choice
     )
 
