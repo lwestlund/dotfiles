@@ -15,6 +15,11 @@ profile one-ext-4k {
         output "WAM TYPE-C demoset-1" mode 3840x2160 position 0,0
 }
 
+profile home-tv {
+        output eDP-1 mode 1920x1200 position 960,2160
+        output "LG Electronics LG TV SSCR2 0x01010101" mode 3840x2160 position 0,0
+}
+
 profile one-ext {
         output eDP-1 mode 1920x1200 position 0,1080
         output "*"   mode 1920x1080 position 0,0
