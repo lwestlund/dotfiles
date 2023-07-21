@@ -12,7 +12,7 @@ profile two-ext-1 {
 
 profile one-ext-4k {
         output eDP-1 mode 1920x1200 position 960,2160
-        output "WAM TYPE-C demoset-1"  mode 3840x2160 position 0,0
+        output "WAM TYPE-C demoset-1" mode 3840x2160 position 0,0
 }
 
 profile one-ext {
