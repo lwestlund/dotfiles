@@ -20,6 +20,7 @@ function install_config() {
     link_config latexmk
     link_config mako
     link_config nvim
+    link_config swaylock
     link_config systemd/user/hyprland-session.target
     link_config systemd/user/kanshi.service
     link_config systemd/user/polkit-kde.service
