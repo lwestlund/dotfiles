@@ -53,7 +53,7 @@ packages=(
     discord
     dust
     emote
-    exa
+    eza
     fd
     feh
     firefox

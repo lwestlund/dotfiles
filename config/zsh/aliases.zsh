@@ -51,10 +51,10 @@ if command -v rg > /dev/null; then
     alias rg='rg --smart-case'
 fi
 
-if command -v exa > /dev/null; then
-    alias exa="exa --group-directories-first"
-    alias l="exa -1"
-    alias ll="exa --long"
+if command -v eza > /dev/null; then
+    alias eza="eza --group-directories-first"
+    alias l="eza -1"
+    alias ll="eza --long"
     alias la="ll --all"
     alias lr="ll --tree"
 else
