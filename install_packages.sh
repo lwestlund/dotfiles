@@ -148,6 +148,7 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         bluez
         bluez-utils
         brightnessctl
+        easyeffects
         emacs-gcc-wayland-devel-bin
         fprintd
         libinput-gestures

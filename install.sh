@@ -22,6 +22,7 @@ function install_config() {
     link_config nvim
     link_config pipewire
     link_config swaylock
+    link_config systemd/user/easyeffects.service
     link_config systemd/user/hyprland-session.target
     link_config systemd/user/kanshi.service
     link_config systemd/user/polkit-kde.service
@@ -31,6 +32,7 @@ function install_config() {
 }
 install_config
 
+systemctl --user enable easyeffects.service
 systemctl --user enable kanshi.service
 systemctl --user enable mako.service
 systemctl --user enable pipewire.service
