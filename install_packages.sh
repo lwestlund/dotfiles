@@ -39,6 +39,15 @@ wm_bspwm=(
     shotgun             # Screenshot util
 )
 
+audio=(
+    easyeffects         # Audio effects for pipewire
+    qpwgraph            # Pipewire graph GUI
+    pipewire            # Audio (and video) router and processor
+    pipewire-pulse      # Pipewire replacement for Pulseaudio
+    playerctl           # Media player control for e.g. Spotify
+    wireplumber         # Pipewire session/policy manager (think Pipewire interface)
+)
+
 packages=(
     alacritty
     aspell
@@ -77,9 +86,6 @@ packages=(
     openssh
     otf-san-francisco
     patch
-    pipewire
-    pipewire-pulse
-    playerctl
     polkit-kde-agent
     python
     python-black
@@ -105,12 +111,15 @@ packages=(
     uutils-coreutils    # Coreutils written in Rust
     vdpauinfo
     wget
-    wireplumber
     wmctrl
     zip
     zoxide              # A smarter cd command
     zsh                 # My shell of choice
     )
+
+packages+=(
+    ${audio[@]}
+)
 
 if [[ $(cat /etc/hostname) == "wire" ]]; then
     packages+=(
