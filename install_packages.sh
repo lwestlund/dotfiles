@@ -106,6 +106,7 @@ packages=(
     ttf-iosevka-nerd
     ttf-lato
     ttf-liberation
+    ttf-nerd-fonts-symbols-mono
     unzip
     usbutils
     uutils-coreutils    # Coreutils written in Rust
