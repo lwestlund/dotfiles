@@ -48,6 +48,18 @@ audio=(
     wireplumber         # Pipewire session/policy manager (think Pipewire interface)
 )
 
+fonts=(
+    noto-fonts
+    noto-fonts-emoji # How else would you be able to write 🔥?
+    otf-san-francisco
+    ttf-jetbrains-mono
+    ttf-font-awesome
+    ttf-iosevka-nerd
+    ttf-lato
+    ttf-liberation
+    ttf-nerd-fonts-symbols-mono
+)
+
 packages=(
     alacritty
     aspell
@@ -81,10 +93,7 @@ packages=(
     neovim
     networkmanager
     networkmanager-openvpn
-    noto-fonts
-    noto-fonts-emoji # How else would you be able to write 🔥?
     openssh
-    otf-san-francisco
     patch
     polkit-kde-agent
     python
@@ -101,12 +110,6 @@ packages=(
     sccache             # Shared compiler cache
     signal-desktop
     spotify
-    ttf-jetbrains-mono
-    ttf-font-awesome
-    ttf-iosevka-nerd
-    ttf-lato
-    ttf-liberation
-    ttf-nerd-fonts-symbols-mono
     unzip
     usbutils
     uutils-coreutils    # Coreutils written in Rust
@@ -120,6 +123,7 @@ packages=(
 
 packages+=(
     ${audio[@]}
+    ${fonts[@]}
 )
 
 if [[ $(cat /etc/hostname) == "wire" ]]; then
