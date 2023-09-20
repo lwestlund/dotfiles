@@ -30,13 +30,12 @@
  lsp-ui-peek-list-width 50
  )
 
-;; Do not format on save in the following modes (plus the default ones).
+;; Do not format on save in the following modes.
 (after! format
-  (setq +format-on-save-enabled-modes
-        (append +format-on-save-enabled-modes
-                '(python-mode
-                  cmake-mode
-                  yaml-mode))))
+  (setq +format-on-save-disabled-modes
+        '(python-mode
+          cmake-mode
+          yaml-mode)))
 
 (add-hook! 'latex-mode-hook 'turn-on-auto-fill)
 
