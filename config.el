@@ -2,6 +2,8 @@
 
 ;; Place your private configuration here
 
+(setq nerd-icons-font-names '("SymbolsNerdFontMono-Regular.ttf"))
+
 (setq
  ;; Font configuration.
  doom-font (font-spec :family "JetBrains Mono NL" :size 13)
