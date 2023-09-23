@@ -163,7 +163,7 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         bluez-utils
         brightnessctl
         easyeffects
-        emacs-gcc-wayland-devel-bin
+        emacs-wayland
         fprintd
         libinput-gestures
         network-manager-applet
