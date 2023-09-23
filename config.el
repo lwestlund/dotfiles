@@ -10,6 +10,8 @@
             :family "JetBrainsMono Nerd Font"
             :size (if (string-equal (system-name) "netbook") 16 13))
 
+ doom-unicode-font (font-spec :family "Noto Color Emoji")
+
  ;; Decrease delay until which-key pops up.
  which-key-idle-delay 0.3
  display-line-numbers-type nil
