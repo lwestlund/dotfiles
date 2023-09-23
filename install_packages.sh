@@ -52,7 +52,7 @@ fonts=(
     noto-fonts
     noto-fonts-emoji # How else would you be able to write 🔥?
     otf-san-francisco
-    ttf-jetbrains-mono
+    ttf-jetbrains-mono-nerd
     ttf-font-awesome
     ttf-iosevka-nerd
     ttf-lato
