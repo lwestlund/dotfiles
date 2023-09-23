@@ -32,6 +32,7 @@ function install_config() {
 }
 install_config
 
+systemctl --user daemon-reload
 systemctl --user enable easyeffects.service
 systemctl --user enable kanshi.service
 systemctl --user enable mako.service
@@ -47,4 +48,4 @@ sudo cp $repo/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.d/
 
 ln -sf $repo/clang-format   $HOME/.clang-format
 
-echo "Config install complete. Reboot or logout and login if making changes to systemd/user."
+echo "Config install complete."
