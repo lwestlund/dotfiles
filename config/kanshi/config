@@ -10,9 +10,14 @@ profile two-ext-1 {
         output "Dell Inc. DELL U2419HC 4YS95R2"   mode 1920x1080 position 1920,0
 }
 
-profile one-ext-4k {
+profile work-voxicon {
         output eDP-1 mode 1920x1200 position 960,2160
         output "WAM TYPE-C demoset-1" mode 3840x2160 position 0,0
+}
+
+profile work-thinkvision {
+        output eDP-1 mode 1920x1200 position 320,1440
+        output "Lenovo Group Limited P27q-20 V90ANZK7" mode 2560x1440 position 0,0
 }
 
 profile home-tv {
