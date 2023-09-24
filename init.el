@@ -106,11 +106,14 @@
        ;;rgb               ; creating color strings
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
+       tree-sitter         ; syntax and parsing, sitting in a tree...
        ;;upload            ; map local to remote projects via ssh/ftp
 
        :lang
        ;;agda              ; types of types of types of types...
-       (cc +lsp)           ; C/C++/Obj-C madness
+       (cc               ; C/C++/Obj-C madness
+        +lsp
+        +tree-sitter)
        ;;clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -166,10 +169,14 @@
        ;;rest              ; Emacs as a REST client
        ;; rst               ; ReST in peace
        ;;ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       (rust +lsp)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust            ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+        +lsp
+        +tree-sitter)
        ;;scala             ; java, but good
        ;;scheme            ; a fully conniving family of lisps
-       (sh +lsp)           ; she sells {ba,z,fi}sh shells on the C xor
+       (sh              ; she sells {ba,z,fi}sh shells on the C xor
+        +lsp
+        +tree-sitter)
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
