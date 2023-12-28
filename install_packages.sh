@@ -10,7 +10,7 @@ wm_hyprland=(
     qt6-wayland
     sddm                            # Display manager
     swaylock                        # Screen locker
-    waybar-hyprland-git             # A decent status bar
+    waybar                          # A decent status bar
     wofi                            # An application launcher
     xdg-desktop-portal-hyprland-git
 

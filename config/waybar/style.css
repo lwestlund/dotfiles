@@ -54,6 +54,10 @@ button:hover {
   margin-left: -6px;
 }
 
+#workspaces button.visible {
+  background-color: #ff0000;
+}
+
 #workspaces button.active {
   background-color: #555;
   border-radius: 10px;
@@ -69,10 +73,6 @@ button:hover {
 #workspaces button.focused {
   background-color: #64727d;
   box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.visible {
-  background-color: #ff0000;
 }
 
 #workspaces button.urgent {
