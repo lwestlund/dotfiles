@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 wm_hyprland=(
     hyprland-git                    # The thing that we are all here for
