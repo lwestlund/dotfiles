@@ -98,9 +98,9 @@ packages=(
     polkit-kde-agent
     python
     python-black
-    python-pip
     python-isort
     python-lsp-server
+    python-pip
     python-pyflakes
     qbittorrent
     reflector
