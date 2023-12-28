@@ -47,6 +47,7 @@ sudo install -m 644 "$repo"/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.
 (
     sudo install -d /etc/pacman.d/hooks
     sudo install -m 644 "$repo"/etc/pacman.d/hooks/cache-cleanup.hook /etc/pacman.d/hooks/
+    sudo install -m 644 "$repo"/etc/pacman.d/hooks/mirrorupgrade.hook /etc/pacman.d/hooks/
 )
 
 ln -sf "$repo"/clang-format "$HOME"/.clang-format
