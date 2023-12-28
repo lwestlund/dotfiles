@@ -12,7 +12,3 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_BIN_HOME="$HOME/.local/bin"
 
 export ZSH_CACHE=$XDG_CACHE_HOME/zsh
-
-if [ -z "${DISPLAY}" ] && [ -n "${XDG_VTNR}" ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec startx "${XDG_CONFIG_HOME}/xinit/xinitrc"
-fi
