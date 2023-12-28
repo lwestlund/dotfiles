@@ -38,10 +38,10 @@ systemctl --user enable polkit-kde.service
 systemctl --user enable swaync.service
 systemctl --user enable wireplumber.service
 
-mkdir -p ~/.local/bin
+install -d ~/.local/bin
 ln -sf "$repo"/bin/*    ~/.local/bin/
 
-sudo cp $repo/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.d/
+sudo install -m 644 "$repo"/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.d/
 
 ln -sf "$repo"/clang-format "$HOME"/.clang-format
 
