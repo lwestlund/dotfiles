@@ -21,4 +21,4 @@
 	adog = log --all --decorate --oneline --graph
 	adogs = log --all --decorate --oneline --graph --stat
 [gui]
-	fontdiff = -family \"JetBrains Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"JetBrainsMono NF\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
