@@ -74,11 +74,10 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
-       :term
-       ;;eshell            ; a consistent, cross-platform shell (WIP)
-       ;;shell             ; a terminal REPL for Emacs
-       ;;term              ; terminals in Emacs
-       ;;vterm             ; another terminals in Emacs
+       :email
+       ;;(mu4e +gmail)
+       ;;notmuch
+       ;;(wanderlust +gmail)
 
        :checkers
        syntax            ; tasing you for every semicolon you forget
@@ -97,7 +96,6 @@
        ;;gist              ; interacting with github gists
        lookup            ; helps you navigate your code and documentation
        (lsp +peek)
-       ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -183,10 +181,14 @@
        ;;web               ; the tubes
        yaml              ; JSON, but readable
 
-       :email
-       ;;(mu4e +gmail)
-       ;;notmuch
-       ;;(wanderlust +gmail)
+       :os
+       ;; macos             ; MacOS-specific commands
+
+       :term
+       ;;eshell            ; a consistent, cross-platform shell (WIP)
+       ;;shell             ; a terminal REPL for Emacs
+       ;;term              ; terminals in Emacs
+       ;;vterm             ; another terminals in Emacs
 
        :app
        ;;calendar
