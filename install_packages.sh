@@ -40,7 +40,6 @@ wm_bspwm=(
 )
 
 audio=(
-    easyeffects         # Audio effects for pipewire
     qpwgraph            # Pipewire graph GUI
     pipewire            # Audio (and video) router and processor
     pipewire-pulse      # Pipewire replacement for Pulseaudio
@@ -162,7 +161,6 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         bluez
         bluez-utils
         brightnessctl
-        easyeffects
         emacs-wayland
         fprintd
         libinput-gestures
