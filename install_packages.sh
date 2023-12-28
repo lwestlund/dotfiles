@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 wm_hyprland=(
-    hyprland-git                    # The thing that we are all here for
+    hyprland                        # The thing that we are all here for
 
     hyprpaper                       # Wallpaper setter
     kanshi                          # Automatic monitor handling
@@ -12,7 +12,7 @@ wm_hyprland=(
     swaylock                        # Screen locker
     waybar                          # A decent status bar
     wofi                            # An application launcher
-    xdg-desktop-portal-hyprland-git
+    xdg-desktop-portal-hyprland
 
     # Screen shots
     grim                # Capture
