@@ -4,3 +4,5 @@ Documentation=man:systemd.special
 BindsTo=graphical-session.target
 Wants=graphical-session-pre.target
 After=graphical-session-pre.target
+Wants=waybar.service
+Before=waybar.service

@@ -38,7 +38,6 @@ systemctl --user enable kanshi.service
 systemctl --user enable mako.service
 systemctl --user enable pipewire.service
 systemctl --user enable polkit-kde.service
-systemctl --user enable waybar.service
 systemctl --user enable wireplumber.service
 
 mkdir -p ~/.local/bin
