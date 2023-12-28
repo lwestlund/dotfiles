@@ -81,6 +81,7 @@ button:hover {
 
 #submap {
   background-color: #990066;
+  padding: 0px 10px;
 }
 
 #keyboard-state > label.locked {
