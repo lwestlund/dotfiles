@@ -2,15 +2,15 @@
 
 set -e
 
-rel_dir=$(dirname $0)
-repo=$(readlink -f $rel_dir)
+rel_dir=$(dirname "$0")
+repo=$(readlink -f "$rel_dir")
 readonly repo
 
-ln -sf $repo/zshenv     ~/.zshenv
+ln -sf "$repo"/zshenv   ~/.zshenv
 
 function install_config() {
     function link_config() {
-        ln -sf $repo/config/$1 ~/.config/$(dirname $1)/
+        ln -sf "$repo"/config/"$1" ~/.config/"$(dirname "$1")"/
     }
     link_config alacritty
     link_config bat
@@ -39,10 +39,10 @@ systemctl --user enable swaync.service
 systemctl --user enable wireplumber.service
 
 mkdir -p ~/.local/bin
-ln -sf $repo/bin/* ~/.local/bin/
+ln -sf "$repo"/bin/*    ~/.local/bin/
 
 sudo cp $repo/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.d/
 
-ln -sf $repo/clang-format   $HOME/.clang-format
+ln -sf "$repo"/clang-format "$HOME"/.clang-format
 
 echo "Config install complete."

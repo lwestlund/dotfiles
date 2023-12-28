@@ -121,13 +121,13 @@ packages=(
     )
 
 packages+=(
-    ${audio[@]}
-    ${fonts[@]}
+    "${audio[@]}"
+    "${fonts[@]}"
 )
 
 if [[ $(cat /etc/hostname) == "wire" ]]; then
     packages+=(
-        ${wm_bspwm[@]}
+        "${wm_bspwm[@]}"
         audacity
         audio-recorder
         calibre
@@ -156,7 +156,7 @@ if [[ $(cat /etc/hostname) == "wire" ]]; then
     )
 elif [[ $(cat /etc/hostname) == "netbook" ]]; then
     packages+=(
-        ${wm_hyprland[@]}
+        "${wm_hyprland[@]}"
         blueman
         bluez
         bluez-utils
@@ -189,4 +189,4 @@ if [[ ! $(command -v paru) ]]; then
     popd
 fi
 
-paru -S ${packages[@]}
+paru -S "${packages[@]}"
