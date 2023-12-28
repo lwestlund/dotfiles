@@ -5,11 +5,11 @@ wm_hyprland=(
 
     hyprpaper                       # Wallpaper setter
     kanshi                          # Automatic monitor handling
-    mako                            # Notification daemon
     qt5-wayland
     qt6-wayland
     sddm                            # Display manager
     swaylock                        # Screen locker
+    swaync                          # Notification center
     waybar                          # A decent status bar
     wofi                            # An application launcher
     xdg-desktop-portal-hyprland

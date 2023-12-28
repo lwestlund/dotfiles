@@ -18,10 +18,10 @@ function install_config() {
     link_config hypr
     link_config kanshi
     link_config latexmk
-    link_config mako
     link_config nvim
     link_config pipewire
     link_config swaylock
+    link_config swaync
     link_config systemd/user/hyprland-session.target
     link_config systemd/user/kanshi.service
     link_config systemd/user/polkit-kde.service
@@ -33,9 +33,9 @@ install_config
 
 systemctl --user daemon-reload
 systemctl --user enable kanshi.service
-systemctl --user enable mako.service
 systemctl --user enable pipewire.service
 systemctl --user enable polkit-kde.service
+systemctl --user enable swaync.service
 systemctl --user enable wireplumber.service
 
 mkdir -p ~/.local/bin
