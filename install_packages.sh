@@ -93,6 +93,7 @@ packages=(
     networkmanager
     networkmanager-openvpn
     openssh
+    pacman-contrib      # Extra pacman things, like paccache
     patch
     polkit-kde-agent
     python
