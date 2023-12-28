@@ -59,6 +59,12 @@ fonts=(
     ttf-nerd-fonts-symbols-mono
 )
 
+shell_programming=(
+    bash-language-server
+    shellcheck
+    shfmt
+)
+
 packages=(
     alacritty
     aspell
@@ -124,6 +130,7 @@ packages=(
 packages+=(
     "${audio[@]}"
     "${fonts[@]}"
+    "${shell_programming[@]}"
 )
 
 if [[ $(cat /etc/hostname) == "wire" ]]; then
