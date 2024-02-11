@@ -13,9 +13,9 @@
                           "")))
               (propertize (if (> (length str) doom-modeline-vcs-max-length)
                               (if (string= (substring str 0 8) "feature/")
-                                  (concat "f" (substring str 7 (- (+ 7 doom-modeline-vcs-max-length) (length "f"))))
+                                  (concat "f" (substring str (length "feature")))
                                 (if (string= (substring str 0 8) "nomerge/")
-                                    (concat "nm" (substring str 7 (- (+ 7 doom-modeline-vcs-max-length) (length "nm"))))
+                                    (concat "nm" (substring str (length "nomerge")))
                                   str
                                   ))
                             str)
