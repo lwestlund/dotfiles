@@ -22,8 +22,8 @@ setopt PUSHD_TO_HOME        # Push to the home directory when no argument is giv
 
 # History
 HISTFILE=$ZSH_CACHE/history
-HISTSIZE=1000               # Max events to store in internal history.
-SAVEHIST=1000               # Max events to store in history file.
+HISTSIZE=2000               # Max events to store in internal history.
+SAVEHIST=2000               # Max events to store in history file.
 setopt APPEND_HISTORY       # Appends history to history file on exit.
 setopt BANG_HIST            # Expand from history with `!`.
 setopt EXTENDED_HISTORY     # Write the history file in the ':start:elapsed;command' format.
