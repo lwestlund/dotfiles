@@ -1,8 +1,15 @@
 [user]
 	name = Love Westlund
 	email = love.westlund@proton.me
+	signingkey = ~/.ssh/id_ed25519.pub
+
+[commit]
+	gpgSign = true
 
 [core]
+
+[gpg]
+	format = ssh
 
 [init]
 	defaultBranch = main
