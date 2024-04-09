@@ -68,7 +68,7 @@ abbrevs+=(
     "grbia" "git rebase -i --autosquash"
     "grba"  "git rebase --abort"
     "grbc"  "git rebase --continue"
-    "grbm"  "git rebase master"
+    "grbm"  "git rebase main"
     "grbd"  "git rebase develop"
 
     "gr"    "git reset"
