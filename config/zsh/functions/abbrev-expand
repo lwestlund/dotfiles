@@ -10,10 +10,12 @@
 
 # To use:
 #   autoload -Uz abbrev-expand
+#   zle -N abbrev-expand-basic-space abbrev-expand
 #   zle -N abbrev-expand-magic-space abbrev-expand
 #   zle -N abbrev-expand-and-accept abbrev-expand
 #   zle -N abbrev-expand-or-complete abbrev-expand
 # and optionally bind to some keys:
+#   bindkey "^@" abbrev-expand-basic-space
 #   bindkey " " abbrev-expand-magic-space
 #   bindkey "^M" abbrev-expand-and-accept
 #   bindkey "^I" abbrev-expand-or-complete
@@ -114,7 +116,14 @@ expand-abbrev() {
     fi
 }
 
+basic-space() {
+    LBUFFER+=" "
+}
+
 case $WIDGET in
+    abbrev-expand-basic-space)
+        basic-space
+        ;;
     abbrev-expand-magic-space)
         zle expand-dots
         expand-abbrev

@@ -7,11 +7,13 @@ bindkey -M viins 'jk' vi-cmd-mode
 
 # abbrev-expand, my own module.
 autoload -Uz abbrev-expand
+zle -N abbrev-expand-basic-space abbrev-expand
 zle -N abbrev-expand-magic-space abbrev-expand
 zle -N abbrev-expand-and-accept abbrev-expand
 zle -N abbrev-expand-or-complete abbrev-expand
 bindkey "^M" abbrev-expand-and-accept            # Return key.
 bindkey -M viins "^I" abbrev-expand-or-complete  # Tab key.
+bindkey -M viins "^@" abbrev-expand-basic-space  # Ctrl-space.
 bindkey -M viins " " abbrev-expand-magic-space   # Space key.
 # TODO: Maybe this is not necesserary with magic-space, have to try it.
 bindkey -M isearch " " self-insert              # Don't try to expand anything in search mode.
