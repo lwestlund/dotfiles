@@ -2,8 +2,6 @@
 
 ;; Place your private configuration here
 
-(setq nerd-icons-font-names '("SymbolsNerdFontMono-Regular.ttf"))
-
 (setq
  ;; Font configuration.
  doom-font (font-spec
@@ -11,6 +9,7 @@
             :size (if (string-equal (system-name) "netbook") 14 13))
 
  doom-symbol-font (font-spec :family "Noto Color Emoji")
+ nerd-icons-font-names '("SymbolsNerdFontMono-Regular.ttf")
 
  ;; Decrease delay until which-key pops up.
  which-key-idle-delay 0.3
