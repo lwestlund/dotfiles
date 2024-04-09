@@ -39,6 +39,8 @@ abbrevs+=(
     "g2"    "git log2"
     "g3"    "git log3"
 
+    "ga"    "git add"
+
     "gc"    "git commit"
     "gcf"   "git commit --fixup"
     "gca"   "git commit --amend"
