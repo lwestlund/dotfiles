@@ -1,3 +1,8 @@
+profile desktop {
+        output "Ancor Communications Inc VG248 F1LMQS059279"    mode 1920x1080 position 0,0
+        output "Ancor Communications Inc VG248 E2LMQS008636"    mode 1920x1080 position 1920,0
+}
+
 profile two-ext-1 {
         output eDP-1 mode 1920x1200 position 960,1080
         output "Dell Inc. DELL U2419HC 5F937R2"   mode 1920x1080 position 0,0
