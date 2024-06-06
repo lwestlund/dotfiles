@@ -1,7 +1,12 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: SF Pro Display, FiraCode Nerd Font, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family:
+    SF Pro Display,
+    JetBrainsMono NF Bold;
+  /* Roboto, */
+  /* Helvetica, */
+  /* Arial, */
+  /* sans-serif; */
   font-size: 15px;
 }
 
@@ -55,7 +60,6 @@ button:hover {
 }
 
 #workspaces button.visible {
-  background-color: #ff0000;
 }
 
 #workspaces button.active {
@@ -115,16 +119,15 @@ button:hover {
 #workspaces {
   border-radius: 12px;
   color: #ffffff;
-  padding: 0 10px;
-  margin-bottom: 10px;
+  /* padding: 0 10px; */
+  margin-bottom: 4px;
 }
 
-#window,
-#workspaces {
+#window {
 }
 
 #workspaces {
-  background-color: #333;
+  background-color: rgba(40, 42, 54, 0);
   /* box-shadow: 0px 5px 5px 1px rgba(255, 0, 200, 0.188); */
   border: 1px solid #222;
   padding: 0px;
@@ -141,19 +144,22 @@ button:hover {
 }
 
 #clock {
-  background-color: #64727d;
+  margin-left: 7px;
+  margin-right: 12px;
+  /* background-color: #64727d; */
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
-  padding-right: 20px;
+  /* background-color: #ffffff; */
+  /* color: #000000; */
+  padding-right: 9px;
+  margin-left: 5px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #ffffff;
-  background-color: #26a65b;
+  /* color: #ffffff; */
+  /* background-color: #26a65b; */
 }
 
 @keyframes blink {
@@ -195,32 +201,37 @@ label:focus {
 }
 
 #network {
-  background-color: #2980b9;
-  padding-right: 16px;
+  /* background-color: #2980b9; */
+  padding-right: 8px;
+  margin-left: 4px;
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  /* background-color: #f53c3c; */
 }
 
 #pulseaudio {
-  background-color: #e5c07b;
-  color: #000000;
-  padding-right: 13px;
+  /* background-color: #e5c07b; */
+  /* color: #000000; */
+  padding-right: 4px;
+  margin-left: 4px;
 }
 
 #pulseaudio.muted {
-  background-color: #abb2bf;
-  color: #2a5c45;
+  /* background-color: #abb2bf; */
+  /* color: #2a5c45; */
 }
 
 #wireplumber {
-  background-color: #fff0f5;
-  color: #000000;
+  /* color: #fff0f5; */
+  padding-right: 0px;
+  margin-left: 4px;
 }
 
 #wireplumber.muted {
-  background-color: #f53c3c;
+  background-color: transparent;
+  padding-right: 4px;
+  margin-left: 4px;
 }
 
 #custom-media {
@@ -238,16 +249,17 @@ label:focus {
 }
 
 #temperature {
-  background-color: #f0932b;
-  padding-right: 11px;
+  /* background-color: #f0932b; */
+  padding-right: 3px;
+  margin-left: 4px;
 }
 
 #temperature.critical {
-  background-color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #tray {
-  background-color: #2980b9;
+  /* background-color: #2980b9; */
 }
 
 #tray > .passive {
@@ -295,4 +307,8 @@ label:focus {
 
 #scratchpad.empty {
   background-color: transparent;
+}
+
+#custom-notification {
+  padding-right: 5px;
 }
