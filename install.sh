@@ -20,7 +20,6 @@ function install_config() {
     link_config latexmk
     link_config nvim
     link_config pipewire
-    link_config swaylock
     link_config swaync
     link_config systemd/user/hyprland-session.target
     link_config systemd/user/kanshi.service

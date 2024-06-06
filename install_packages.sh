@@ -3,12 +3,12 @@
 wm_hyprland=(
     hyprland                        # The thing that we are all here for
 
+    hyprlock                        # Screen locker
     hyprpaper                       # Wallpaper setter
     kanshi                          # Automatic monitor handling
     qt5-wayland
     qt6-wayland
     sddm                            # Display manager
-    swaylock                        # Screen locker
     swaync                          # Notification center
     waybar                          # A decent status bar
     wofi                            # An application launcher
