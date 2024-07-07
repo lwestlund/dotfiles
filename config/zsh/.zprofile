@@ -12,3 +12,5 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_BIN_HOME="$HOME/.local/bin"
 
 export ZSH_CACHE=$XDG_CACHE_HOME/zsh
+
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
