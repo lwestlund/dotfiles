@@ -65,6 +65,12 @@ shell_programming=(
     shfmt
 )
 
+communication=(
+    discord
+    signal-desktop
+    slack-desktop-wayland
+)
+
 packages=(
     alacritty
     aspell
@@ -76,7 +82,6 @@ packages=(
     bitwarden
     clang
     cmake
-    discord
     dust
     emote
     eza
@@ -114,7 +119,6 @@ packages=(
     rsync
     rustup              # Rust toolchain installer
     sccache             # Shared compiler cache
-    signal-desktop
     spotify
     unzip
     usbutils
@@ -131,6 +135,7 @@ packages+=(
     "${audio[@]}"
     "${fonts[@]}"
     "${shell_programming[@]}"
+    "${communication[@]}"
 )
 
 if [[ $(cat /etc/hostname) == "wire" ]]; then
@@ -174,7 +179,6 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         libinput-gestures
         network-manager-applet
         pavucontrol
-        slack-bin
         sof-firmware
         tlp
         vulkan-devel
