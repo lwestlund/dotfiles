@@ -3,6 +3,7 @@
 wm_hyprland=(
     hyprland                        # The thing that we are all here for
 
+    hypridle
     hyprlock                        # Screen locker
     hyprpaper                       # Wallpaper setter
     kanshi                          # Automatic monitor handling
