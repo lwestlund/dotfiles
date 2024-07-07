@@ -36,6 +36,7 @@ systemctl --user enable pipewire.service
 systemctl --user enable polkit-kde.service
 systemctl --user enable swaync.service
 systemctl --user enable wireplumber.service
+systemctl --user enable ssh-agent.service
 
 install -d ~/.local/bin
 ln -sf "$repo"/bin/*    ~/.local/bin/
