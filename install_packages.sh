@@ -59,6 +59,14 @@ fonts=(
     ttf-nerd-fonts-symbols-mono
 )
 
+python_programming=(
+    python
+    python-grip
+    python-pip
+    python-ruff
+    ruff-lsp
+)
+
 shell_programming=(
     bash-language-server
     shellcheck
@@ -107,12 +115,6 @@ packages=(
     pacman-contrib      # Extra pacman things, like paccache
     patch
     polkit-kde-agent
-    python
-    python-black
-    python-isort
-    python-lsp-server
-    python-pip
-    python-pyflakes
     qbittorrent
     reflector
     ripgrep
@@ -134,6 +136,7 @@ packages=(
 packages+=(
     "${audio[@]}"
     "${fonts[@]}"
+    "${python_programming[@]}"
     "${shell_programming[@]}"
     "${communication[@]}"
 )
