@@ -153,18 +153,4 @@
    )
   )
 
-;; My custom C-mode indentation settings.
-(defun my-c-mode-common-hook ()
-  (setq c-basic-offset 2)
-  (c-set-offset 'brace-list-close 0)
-  (c-set-offset 'brace-list-entry 0)
-  (c-set-offset 'brace-list-intro '+)
-  (c-set-offset 'func-decl-cont 0)
-  (c-set-offset 'label '+)
-  (c-set-offset 'substatement 0)
-  (c-set-offset 'topmost-intro 0)
-  (c-set-offset 'topmost-intro-cont 0)
-  )
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
 (load! "+doom-modeline")
