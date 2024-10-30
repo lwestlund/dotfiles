@@ -59,6 +59,12 @@
         (evil-ex-search-activate-highlight evil-ex-search-pattern)))))
 (advice-add #'consult-line :after #'add-consult-line-to-evil-history)
 
+;;; Extra key binds
+(map! :leader
+      :prefix ("p" . "project")
+      :desc "List project todos"
+      "t" #'magit-todos-list)
+
 ;;; :lang rust
 (setq
  lsp-inlay-hint-enable t

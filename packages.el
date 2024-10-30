@@ -7,4 +7,5 @@
 ;; (package! builtin-package :disable t)
 
 (package! magit-delta)
+(package! magit-todos)
 (package! protobuf-mode)
