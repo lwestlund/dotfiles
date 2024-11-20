@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias path='echo -e ${PATH//:/\\n}'
 alias fpath='echo -e ${FPATH//:/\\n}'
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 source $ZDOTDIR/config.zsh
 if [[ $TERM != dumb ]]; then
     source $ZDOTDIR/zgenom.zsh
