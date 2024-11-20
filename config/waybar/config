@@ -170,14 +170,14 @@
             "car": "",
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "pavucontrol",
+        "on-click": "pwvucontrol",
         "tooltip-format": "{desc} {volume}%"
     },
     "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "󰝟",
-        "on-click": "qpwgraph",
-        "on-click-right": "pavucontrol",
+        "on-click": "pwvucontrol",
+        "on-click-right": "qpwgraph",
         "format-icons": ["󰕿", "󰖀", "󰕾"]
     },
     "custom/media": {
