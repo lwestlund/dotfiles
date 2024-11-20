@@ -2,7 +2,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fpath='echo -e ${FPATH//:/\\n}'
 
 # Core utils
-if [[ $(pacman -Qi uutils-coreutils &> /dev/null) ]]; then
+if [[ $(pacman -Qi uutils-coreutils &>/dev/null) ]]; then
   alias \[='uu-['
   alias base32='uu-base32'
   alias base64='uu-base64'
@@ -43,7 +43,7 @@ else
   alias mv='mv -i'
 fi
 
-if command -v bat > /dev/null; then
+if command -v bat >/dev/null; then
   alias cat='bat'
 fi
 
@@ -51,24 +51,24 @@ alias free='free --human'
 
 alias grep='grep --color=auto'
 
-if command -v rg > /dev/null; then
-    alias rg='rg --smart-case'
+if command -v rg >/dev/null; then
+  alias rg='rg --smart-case'
 fi
 
-if command -v eza > /dev/null; then
-    alias eza="eza --group-directories-first"
-    alias l="eza -1"
-    alias ll="eza --long"
-    alias la="ll --all"
-    alias lr="ll --tree"
+if command -v eza >/dev/null; then
+  alias eza="eza --group-directories-first"
+  alias l="eza -1"
+  alias ll="eza --long"
+  alias la="ll --all"
+  alias lr="ll --tree"
 else
-    alias l='ls -gGFhp'
-    alias ll='ls -AlFhp'
-    alias la='ls -Ahp'
-    alias lr='ls -R'
+  alias l='ls -gGFhp'
+  alias ll='ls -AlFhp'
+  alias la='ls -Ahp'
+  alias lr='ls -R'
 fi
 
-if command -v zoxide > /dev/null; then
+if command -v zoxide >/dev/null; then
   alias cd="z"
 fi
 
@@ -98,12 +98,14 @@ rcp() {
     --filter=':- .gitignore' \
     --filter=":- $XDG_CONFIG_HOME/git/ignore" \
     "$@"
-}; compdef rcp=rsync
+}
+compdef rcp=rsync
 
 take() {
-  mkdir "$1" && cd "$1";
-}; compdef take=mkdir
+  mkdir "$1" && cd "$1"
+}
+compdef take=mkdir
 
 zman() {
-  PAGER="less -g -I -s '+/^       "$1"'" man zshall;
+  PAGER="less -g -I -s '+/^       "$1"'" man zshall
 }
