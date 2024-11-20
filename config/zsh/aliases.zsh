@@ -73,8 +73,13 @@ if command -v zoxide > /dev/null; then
 fi
 
 # Yank/paste to/from system clipboard.
-alias y='xclip -selection clipboard -in'
-alias p='xclip -selection clipboard -out'
+if [[ -n "${WAYLAND_DISPLAY}" ]]; then
+  alias y='wl-copy'
+  alias p='wl-paste'
+else
+  alias y='xclip -selection clipboard -in'
+  alias p='xclip -selection clipboard -out'
+fi
 
 # An rsync that respects gitignore.
 rcp() {
