@@ -135,6 +135,14 @@ prompt_hook_precmd() {
     [[ -n $PROMPT_DONE ]] && print ""; PROMPT_DONE=1
 }
 
+# If in a python virtual environment AND in a direnv sourced environment, show
+# that we are in a virtual environment.
+show_virtual_env() {
+  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+    echo "($(basename $VIRTUAL_ENV)) "
+  fi
+}
+
 prompt_init() {
     setopt promptsubst    # Allow expansion of parameters, commands, and arithmetics.
     autoload -Uz add-zsh-hook
@@ -159,7 +167,7 @@ prompt_init() {
     zle -A zle-keymap-select zle-line-init
 
     newline=$'\n'
-    PS1='%{${fg[cyan]}%}${CWD}${GIT_INFO}${newline}${PROMPT_SYMBOL}%{${reset_color}%} '
+    PS1='$(show_virtual_env)%{${fg[cyan]}%}${CWD}${GIT_INFO}${newline}${PROMPT_SYMBOL}%{${reset_color}%} '
 }
 
 prompt_init
