@@ -65,7 +65,6 @@ python_programming=(
     python-grip
     python-pip
     python-ruff
-    ruff-lsp
 )
 
 shell_programming=(
