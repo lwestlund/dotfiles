@@ -80,6 +80,11 @@ communication=(
     slack-desktop-wayland
 )
 
+docker=(
+    docker
+    docker-buildx
+)
+
 packages=(
     alacritty
     aspell
