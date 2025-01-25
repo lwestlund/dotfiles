@@ -63,20 +63,6 @@ fonts=(
     ttf-nerd-fonts-symbols-mono
 )
 
-python_programming=(
-    python
-    python-grip
-    python-pip
-    python-pyright
-    python-ruff
-)
-
-shell_programming=(
-    bash-language-server
-    shellcheck
-    shfmt
-)
-
 communication=(
     discord
     signal-desktop
@@ -86,6 +72,20 @@ communication=(
 docker=(
     docker
     docker-buildx
+)
+
+programming_python=(
+    python
+    python-grip
+    python-pip
+    python-pyright
+    python-ruff
+)
+
+programming_shell=(
+    bash-language-server
+    shellcheck
+    shfmt
 )
 
 packages=(
@@ -144,8 +144,8 @@ packages=(
 packages+=(
     "${audio[@]}"
     "${fonts[@]}"
-    "${python_programming[@]}"
-    "${shell_programming[@]}"
+    "${programming_python[@]}"
+    "${programming_shell[@]}"
     "${communication[@]}"
 )
 
