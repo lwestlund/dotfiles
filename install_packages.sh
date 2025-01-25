@@ -27,11 +27,13 @@ wm_bspwm=(
 
     betterlockscreen # Screen locker
     dunst            # Notification daemon
+    libinput-gestures
     picom    # Compositor
     polybar  # A status bar
     redshift # Decreases monitor blue light
     rofi     # An application launcher
     sddm     # Display manager
+    wmctrl
     xclip
     xorg
 
@@ -134,7 +136,6 @@ packages=(
     uutils-coreutils # Coreutils written in Rust
     vdpauinfo
     wget
-    wmctrl
     zip
     zoxide # A smarter cd command
     zsh    # My shell of choice
@@ -188,7 +189,6 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         "${docker[@]}"
         emacs-wayland
         fprintd
-        libinput-gestures
         network-manager-applet
         sof-firmware
         tlp
