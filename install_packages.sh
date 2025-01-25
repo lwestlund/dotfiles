@@ -64,6 +64,7 @@ python_programming=(
     python
     python-grip
     python-pip
+    python-pyright
     python-ruff
 )
 
