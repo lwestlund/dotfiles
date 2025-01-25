@@ -1,51 +1,51 @@
 #!/usr/bin/env bash
 
 wm_hyprland=(
-    hyprland                        # The thing that we are all here for
+    hyprland # The thing that we are all here for
 
-    hypridle
-    hyprlock                        # Screen locker
-    hyprpaper                       # Wallpaper setter
-    kanshi                          # Automatic monitor handling
+    hypridle  # Remembers to lock your computer when you don't
+    hyprlock  # Screen locker
+    hyprpaper # Wallpaper setter
+    kanshi    # Automatic monitor handling
     qt5-wayland
     qt6-wayland
-    sddm                            # Display manager
-    swaync                          # Notification center
-    waybar                          # A decent status bar
-    wofi                            # An application launcher
+    sddm   # Display manager
+    swaync # Notification center
+    waybar # A decent status bar
+    wofi   # An application launcher
     xdg-desktop-portal-hyprland
 
     # Screen shots
-    grim                # Capture
-    slurp               # Capture selection
-    wl-clipboard        # Capture to clipboard
+    grim         # Capture
+    slurp        # Capture selection
+    wl-clipboard # Capture to clipboard
 )
 
 wm_bspwm=(
     bspwm
-    sxhkd               # Hot key daemon used with BSPWM
+    sxhkd # Hot key daemon used with BSPWM
 
-    betterlockscreen    # Screen locker
-    dunst               # Notification daemon
-    picom               # Compositor
-    polybar             # A status bar
-    redshift            # Decreases monitor blue light
-    rofi                # An application launcher
-    sddm                # Display manager
+    betterlockscreen # Screen locker
+    dunst            # Notification daemon
+    picom    # Compositor
+    polybar  # A status bar
+    redshift # Decreases monitor blue light
+    rofi     # An application launcher
+    sddm     # Display manager
     xclip
     xorg
 
     # Screen shots
-    hacksaw             # Screenshot selection tool
-    shotgun             # Screenshot util
+    hacksaw # Screenshot selection tool
+    shotgun # Screenshot util
 )
 
 audio=(
-    qpwgraph            # Pipewire graph GUI
-    pipewire            # Audio (and video) router and processor
-    pipewire-pulse      # Pipewire replacement for Pulseaudio
-    playerctl           # Media player control for e.g. Spotify
-    wireplumber         # Pipewire session/policy manager (think Pipewire interface)
+    qpwgraph       # Pipewire graph GUI
+    pipewire       # Audio (and video) router and processor
+    pipewire-pulse # Pipewire replacement for Pulseaudio
+    playerctl      # Media player control for e.g. Spotify
+    wireplumber    # Pipewire session/policy manager (think Pipewire interface)
 )
 
 fonts=(
@@ -118,26 +118,26 @@ packages=(
     networkmanager
     networkmanager-openvpn
     openssh
-    pacman-contrib      # Extra pacman things, like paccache
+    pacman-contrib # Extra pacman things, like paccache
     patch
     polkit-kde-agent
     qbittorrent
     reflector
     ripgrep
     rsync
-    rustup              # Rust toolchain installer
-    sccache             # Shared compiler cache
+    rustup  # Rust toolchain installer
+    sccache # Shared compiler cache
     spotify
     unzip
     usbutils
-    uutils-coreutils    # Coreutils written in Rust
+    uutils-coreutils # Coreutils written in Rust
     vdpauinfo
     wget
     wmctrl
     zip
-    zoxide              # A smarter cd command
-    zsh                 # My shell of choice
-    )
+    zoxide # A smarter cd command
+    zsh    # My shell of choice
+)
 
 packages+=(
     "${audio[@]}"
@@ -199,7 +199,7 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
     )
     if [[ $(lscpu | grep "Vendor ID") =~ GenuineIntel ]]; then
         packages+=(
-            intel-media-driver  # For hardware video acceleration on iGPU.
+            intel-media-driver # For hardware video acceleration on iGPU.
         )
     fi
 fi
