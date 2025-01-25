@@ -184,6 +184,7 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         bluez
         bluez-utils
         brightnessctl
+        "${docker[@]}"
         emacs-wayland
         fprintd
         libinput-gestures
