@@ -88,6 +88,10 @@ programming_shell=(
     shfmt
 )
 
+programming_yaml=(
+    yaml-language-server
+)
+
 packages=(
     alacritty
     aspell
@@ -146,6 +150,7 @@ packages+=(
     "${fonts[@]}"
     "${programming_python[@]}"
     "${programming_shell[@]}"
+    "${programming_yaml[@]}"
     "${communication[@]}"
 )
 
