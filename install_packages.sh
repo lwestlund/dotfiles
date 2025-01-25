@@ -45,6 +45,7 @@ audio=(
     pipewire       # Audio (and video) router and processor
     pipewire-pulse # Pipewire replacement for Pulseaudio
     playerctl      # Media player control for e.g. Spotify
+    pwvucontrol    # Volume control applet for Pipewire
     wireplumber    # Pipewire session/policy manager (think Pipewire interface)
 )
 
@@ -189,7 +190,6 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         fprintd
         libinput-gestures
         network-manager-applet
-        pavucontrol
         sof-firmware
         tlp
         vulkan-devel
