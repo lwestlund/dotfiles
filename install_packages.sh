@@ -212,9 +212,10 @@ fi
 if [[ ! $(command -v paru) ]]; then
     sudo pacman -S --noconfirm --needed git base-devel
     git clone https://aur.archlinux.org/paru.git /tmp/paru
-    pushd /tmp/paru/ || exit
-    makepkg -si
-    popd || exit
+    (
+        cd /tmp/paru/ || exit
+        makepkg -si
+    )
 fi
 
 paru -S "${packages[@]}"
