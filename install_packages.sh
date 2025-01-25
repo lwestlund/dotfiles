@@ -154,6 +154,7 @@ if [[ $(cat /etc/hostname) == "wire" ]]; then
         audio-recorder
         calibre
         ckb-next
+        "${docker[@]}"
         emacs-nativecomp
         gimp
         lib32-pipewire
