@@ -1,3 +1,6 @@
+typeset -U PATH path
+path=(~/.local/bin ~/.config/emacs/bin/ ~/.cargo/bin $path)
+
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
