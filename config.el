@@ -36,9 +36,12 @@
 ;; Do not format on save in the following modes.
 (after! format
   (setq +format-on-save-disabled-modes
-        '(python-mode
-          cmake-mode
+        '(cmake-mode
           yaml-mode)))
+
+;; Configure format! (apheleia) to use ruff when formatting Python.
+(setq-hook! 'python-mode-hook +format-with '(ruff-isort ruff))
+(setq-hook! 'python-ts-mode-hook +format-with '(ruff-isort ruff))
 
 (add-hook! 'latex-mode-hook 'turn-on-auto-fill)
 
