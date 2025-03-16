@@ -63,7 +63,7 @@ button:hover {
 }
 
 #workspaces button.active {
-  background-color: #555;
+  background-color: rgba(200, 200, 200, 0.2);
   border-radius: 10px;
   border: solid 1px #333;
 }
@@ -129,13 +129,13 @@ button:hover {
 #workspaces {
   background-color: rgba(40, 42, 54, 0);
   /* box-shadow: 0px 5px 5px 1px rgba(255, 0, 200, 0.188); */
-  border: 1px solid #222;
+  /* border: 1px solid #222; */
   padding: 0px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-  margin-left: 12px;
+  margin-left: 4px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
