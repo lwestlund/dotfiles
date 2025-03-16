@@ -17,3 +17,5 @@ export XDG_BIN_HOME="$HOME/.local/bin"
 export ZSH_CACHE=$XDG_CACHE_HOME/zsh
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
+export VISUAL=nvim

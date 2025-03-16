@@ -14,6 +14,4 @@ export XDG_BIN_HOME="$HOME/.local/bin"
 export ZSH_CACHE=$XDG_CACHE_HOME/zsh
 export ZDOTDIR=$HOME/.config/zsh
 
-export VISUAL=nvim
-
 xset r rate 270 25
