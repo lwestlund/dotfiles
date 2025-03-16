@@ -2,13 +2,18 @@
 
 source $ZDOTDIR/config.zsh
 if [[ $TERM != dumb ]]; then
+    if command -v fzf >/dev/null; then
+        source <(fzf --zsh)
+        # # Open in tmux popup if on tmux, otherwise use --height mode
+        export FZF_DEFAULT_OPTS="--height 40% --layout reverse"
+    fi
+
     source $ZDOTDIR/zgenom.zsh
     source $ZDOTDIR/completion.zsh
     source $ZDOTDIR/aliases.zsh
     source $ZDOTDIR/keybinds.zsh
     source $ZDOTDIR/prompt.zsh
 
-    # fzf
     # fd is faster than find.
     if command -v fd >/dev/null; then
         export FZF_DEFAULT_COMMAND="fd ."

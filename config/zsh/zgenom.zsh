@@ -9,7 +9,6 @@ if ! zgenom saved; then
     print "Creating a zgenom save"
     zgenom load hlissner/zsh-autopair autopair.zsh
     zgenom load zsh-users/zsh-history-substring-search
-    zgenom load junegunn/fzf shell
     [ -z "$SSH_CONNECTION" ] && zgenom load zdharma-continuum/fast-syntax-highlighting
     zgenom save
 fi
