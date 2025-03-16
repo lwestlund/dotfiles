@@ -13,6 +13,7 @@
 
  ;; Decrease delay until which-key pops up.
  which-key-idle-delay 0.3
+
  display-line-numbers-type nil
 
  doom-modeline-buffer-file-name-style 'relative-from-project
