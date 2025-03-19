@@ -14,6 +14,7 @@ function install_config() {
     }
     link_config alacritty
     link_config bat
+    link_config direnv
     link_config git
     link_config hypr
     link_config kanshi
