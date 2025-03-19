@@ -6,7 +6,7 @@ rel_dir=$(dirname "$0")
 repo=$(readlink -f "$rel_dir")
 readonly repo
 
-ln -sf "$repo"/zshenv   ~/.zshenv
+ln -sf "$repo"/zshenv ~/.zshenv
 
 function install_config() {
     function link_config() {
@@ -40,7 +40,7 @@ systemctl --user enable wireplumber.service
 systemctl --user enable ssh-agent.service
 
 install -d ~/.local/bin
-ln -sf "$repo"/bin/*    ~/.local/bin/
+ln -sf "$repo"/bin/* ~/.local/bin/
 
 sudo install -m 644 "$repo"/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.d/
 
