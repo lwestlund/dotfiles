@@ -127,7 +127,6 @@ packages=(
     openssh
     pacman-contrib # Extra pacman things, like paccache
     patch
-    polkit-kde-agent
     qbittorrent
     reflector
     ripgrep

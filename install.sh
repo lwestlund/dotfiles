@@ -23,7 +23,6 @@ function install_config() {
     link_config shikane
     link_config swaync
     install -d ~/.config/systemd/user
-    link_config systemd/user/polkit-kde.service
     link_config systemd/user/shikane.service
     link_config waybar
     link_config wireplumber
@@ -33,7 +32,6 @@ install_config
 
 systemctl --user daemon-reload
 systemctl --user enable pipewire.service
-systemctl --user enable polkit-kde.service
 systemctl --user enable swaync.service
 systemctl --user enable wireplumber.service
 systemctl --user enable shikane.service
