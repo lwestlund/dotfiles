@@ -17,13 +17,11 @@ function install_config() {
     link_config direnv
     link_config git
     link_config hypr
-    link_config kanshi
     link_config latexmk
     link_config nvim
     link_config pipewire
     link_config swaync
     install -d ~/.config/systemd/user
-    link_config systemd/user/kanshi.service
     link_config systemd/user/polkit-kde.service
     link_config waybar
     link_config wireplumber
@@ -32,7 +30,6 @@ function install_config() {
 install_config
 
 systemctl --user daemon-reload
-systemctl --user enable kanshi.service
 systemctl --user enable pipewire.service
 systemctl --user enable polkit-kde.service
 systemctl --user enable swaync.service
