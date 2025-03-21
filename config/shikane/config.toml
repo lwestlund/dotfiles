@@ -1,0 +1,48 @@
+[[profile]]
+name = "laptop"
+exec = [
+    "notify-send shikane \"Applied profile $SHIKANE_PROFILE_NAME\""
+]
+
+[[profile.output]]
+enable = true
+search = ["n=eDP-1"]
+mode = "1920x1200@60.026Hz"
+position = "0,0"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
+[[profile]]
+name = "work-dual-external"
+exec = [
+    "notify-send shikane \"Applied profile $SHIKANE_PROFILE_NAME\"",
+]
+
+[[profile.output]]
+enable = true
+search = ["n=eDP-1"]
+mode = "1920x1200@60.026Hz"
+position = "1637,1440"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
+[[profile.output]]
+enable = true
+search = ["n=DP-5"]
+mode = "2560x1440@59.951Hz"
+position = "0,0"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
+[[profile.output]]
+enable = true
+search = ["n=DP-6"]
+mode = "2560x1440@59.951Hz"
+position = "2560,0"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+

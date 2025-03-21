@@ -8,6 +8,7 @@ wm_hyprland=(
     hypridle  # Remembers to lock your computer when you don't
     hyprlock  # Screen locker
     hyprpaper # Wallpaper setter
+    shikane # Automatic monitor handling
     qt5-wayland
     qt6-wayland
     swaync # Notification center
