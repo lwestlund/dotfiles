@@ -35,6 +35,7 @@ systemctl --user enable pipewire.service
 systemctl --user enable swaync.service
 systemctl --user enable wireplumber.service
 systemctl --user enable shikane.service
+systemctl --user enable hyprpolkitagent.service
 systemctl --user enable ssh-agent.service
 
 install -d ~/.local/bin
