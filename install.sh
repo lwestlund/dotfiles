@@ -23,7 +23,6 @@ function install_config() {
     link_config pipewire
     link_config swaync
     install -d ~/.config/systemd/user
-    link_config systemd/user/hyprland-session.target
     link_config systemd/user/kanshi.service
     link_config systemd/user/polkit-kde.service
     link_config waybar
