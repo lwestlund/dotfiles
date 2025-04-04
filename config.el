@@ -34,6 +34,9 @@
  lsp-ui-peek-list-width 50
  )
 
+(after! evil-escape
+  (setq evil-escape-key-sequence "jk"))
+
 ;; Do not format on save in the following modes.
 (after! format
   (setq +format-on-save-disabled-modes
