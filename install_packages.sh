@@ -98,7 +98,6 @@ packages=(
     aspell-en
     aspell-sv
     bash-completion
-    bash-language-server
     bat
     bitwarden
     clang
