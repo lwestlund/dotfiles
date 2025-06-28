@@ -43,5 +43,5 @@
 [gui]
 	fontdiff = -family \"JetBrainsMono NF\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 
-[includeIf "gitdir:~/client/"]
-	path = "~/client/gitconfig_include"
+[includeIf "gitdir:~/work/"]
+	path = "~/work/gitconfig_include"
