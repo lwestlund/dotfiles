@@ -28,7 +28,21 @@ if [[ $TERM != dumb ]]; then
     # If you have host-local configuration, this is where you'd put it
     [ -f ~/.zshrc ] && source ~/.zshrc
 
-    eval "$(direnv hook zsh)"
+    # Source additional things like completions.
+    missing_source_files=()
+    source_if_exists() {
+        if [[ -f $1 ]]; then
+            source $1
+        else
+            missing_source_files+=($1)
+        fi
+    }
+    source_if_exists /usr/bin/aws_zsh_completer.sh # aws-cli-bin
+    source_if_exists /usr/share/zsh/site-functions/_pipenv # python-pipenv
+    source_if_exists /usr/share/zsh/site-functions/_just # just
+    if [[ -n ${missing_source_files} ]]; then
+        echo "missing source files: ${(j:, :)missing_source_files}"
+    fi
 
-    [ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
+    eval "$(direnv hook zsh)"
 fi
