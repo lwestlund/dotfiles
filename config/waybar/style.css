@@ -52,6 +52,7 @@ button:hover {
 #workspaces button {
   padding: 0px 10px;
   color: #ffffff;
+  border-radius: 10px;
 }
 
 /* Make buttons overlap a bit */
@@ -70,7 +71,6 @@ button:hover {
 
 #workspaces button:hover {
   background-color: #777;
-  border-radius: 10px;
   border: solid 1px #333;
 }
 
