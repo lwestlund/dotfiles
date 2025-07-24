@@ -3,7 +3,7 @@ My [[https://github.com/hlissner/doom-emacs][Doom Emacs]] configuration.
 
 Installation is easiest with git, simply execute
 #+begin_src shell
-git clone https://github.com/lovewestlundgotby/doom-emacs-private ~/.config/doom
+git clone https://gitlab.com/lwestlund/doom-emacs-private ~/.config/doom
 #+end_src
 
 If you didn't already get Doom itself, it is probably installed with something like
