@@ -114,6 +114,7 @@ packages=(
     cmake
     dust
     emote
+    emacs-wayland
     eza
     fd
     feh
@@ -169,7 +170,6 @@ if [[ $(cat /etc/hostname) == "wire" ]]; then
         calibre
         ckb-next
         "${docker[@]}"
-        emacs-nativecomp
         gimp
         lib32-pipewire
         lutris
@@ -199,7 +199,6 @@ elif [[ $(cat /etc/hostname) == "netbook" ]]; then
         bluez-utils
         brightnessctl
         "${docker[@]}"
-        emacs-wayland
         fprintd
         network-manager-applet
         sof-firmware
