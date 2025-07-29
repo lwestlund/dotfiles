@@ -84,6 +84,14 @@ programming_python=(
     python-ruff
 )
 
+programming_rust=(
+    rustup
+    cargo-binstall
+    cargo-deny
+    cargo-expand
+    sccache # Shared compiler cache
+)
+
 programming_shell=(
     bash-language-server
     shellcheck
@@ -132,8 +140,6 @@ packages=(
     reflector
     ripgrep
     rsync
-    rustup  # Rust toolchain installer
-    sccache # Shared compiler cache
     spotify
     unzip
     usbutils
@@ -149,6 +155,7 @@ packages+=(
     "${audio[@]}"
     "${fonts[@]}"
     "${programming_python[@]}"
+    "${programming_rust[@]}"
     "${programming_shell[@]}"
     "${programming_yaml[@]}"
     "${communication[@]}"
