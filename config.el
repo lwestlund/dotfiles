@@ -50,8 +50,12 @@
 ;;; :lang latex
 (add-hook! 'latex-mode-hook 'turn-on-auto-fill)
 
+;;; :tools magit
 (after! magit
-  (magit-delta-mode +1))
+  (magit-delta-mode +1)
+  (setq transient-values '((magit-rebase "--autostash")
+                           (magit-pull "--rebase" "--autostash")))
+  )
 
 ;;; Extra key binds
 (map! :leader
