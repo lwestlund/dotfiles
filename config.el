@@ -47,6 +47,7 @@
 (setq-hook! 'python-mode-hook +format-with '(ruff-isort ruff))
 (setq-hook! 'python-ts-mode-hook +format-with '(ruff-isort ruff))
 
+;;; :lang latex
 (add-hook! 'latex-mode-hook 'turn-on-auto-fill)
 
 (after! magit
