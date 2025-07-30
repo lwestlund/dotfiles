@@ -39,6 +39,7 @@
 	log3 = log --graph --format='format:%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 	adog = log --all --decorate --oneline --graph
 	adogs = log --all --decorate --oneline --graph --stat
+	clone-for-worktrees = "!sh ~/.config/git/clone-for-worktrees"
 
 [gui]
 	fontdiff = -family \"JetBrainsMono NF\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
