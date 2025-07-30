@@ -9,3 +9,4 @@
 (package! magit-delta)
 (package! magit-todos)
 (package! protobuf-mode)
+(package! just-mode)
