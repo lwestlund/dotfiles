@@ -45,7 +45,6 @@ wm_bspwm=(
 )
 
 audio=(
-    qpwgraph       # Pipewire graph GUI
     pipewire       # Audio (and video) router and processor
     pipewire-pulse # Pipewire replacement for Pulseaudio
     playerctl      # Media player control for e.g. Spotify
