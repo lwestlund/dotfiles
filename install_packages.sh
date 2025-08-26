@@ -79,7 +79,7 @@ programming_python=(
     python
     python-grip
     python-pip
-    python-pyright
+    pyright
     python-ruff
 )
 
