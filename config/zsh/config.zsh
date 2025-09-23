@@ -6,19 +6,19 @@ fi
 WORDCHARS='_-*?[]~&;!#$%^(){}<>'
 
 # Completion
-setopt HASH_LIST_ALL        # Avoid false reports of spelling errors.
+setopt HASH_LIST_ALL # Avoid false reports of spelling errors.
 
 # Expansion and Globbing
-setopt EXTENDED_GLOB        # Use extended globbing with #, ~, and ^. Required for _expand_alias to work
-unsetopt NOMATCH            # Pass on arguments containing asterisks even if it does not expand to anything.
+setopt EXTENDED_GLOB # Use extended globbing with #, ~, and ^. Required for _expand_alias to work
+unsetopt NOMATCH     # Pass on arguments containing asterisks even if it does not expand to anything.
 
 # Changing Directories
 DIRSTACKSIZE=9
-setopt AUTO_CD              # Treat commands that are the name of a directory as `cd <command>`.
-setopt AUTO_PUSHD           # Treat any cd-like command as pushd.
-setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the directory stack.
-setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
-setopt PUSHD_TO_HOME        # Push to the home directory when no argument is given.
+setopt AUTO_CD           # Treat commands that are the name of a directory as `cd <command>`.
+setopt AUTO_PUSHD        # Treat any cd-like command as pushd.
+setopt PUSHD_IGNORE_DUPS # Do not store duplicates in the directory stack.
+setopt PUSHD_SILENT      # Do not print the directory stack after pushd or popd.
+setopt PUSHD_TO_HOME     # Push to the home directory when no argument is given.
 
 # History
 HISTFILE=$ZSH_CACHE/history
@@ -36,14 +36,14 @@ setopt INC_APPEND_HISTORY   # Write to the history file immediately, not when th
 unsetopt HIST_BEEP          # Beep when accessing non-existent history.
 
 # Input/Output
-setopt FLOW_CONTROL         # Pause/resume output with Ctrl+Q/S
-unsetopt CORRECT_ALL        # Don't try to correct everything, if I fail, I fail.
+setopt FLOW_CONTROL  # Pause/resume output with Ctrl+Q/S
+unsetopt CORRECT_ALL # Don't try to correct everything, if I fail, I fail.
 
 # Job Control
-setopt AUTO_CONTINUE        # Automatically continue stopped jobs that are `disown`ed.
-setopt CHECK_JOBS           # On exit, prompt if there are background jobs.
-unsetopt BG_NICE            # Don't run background (&) jobs at a lower priority.
-unsetopt HUP                # Don't kill jobs on shell exit.
+setopt AUTO_CONTINUE # Automatically continue stopped jobs that are `disown`ed.
+setopt CHECK_JOBS    # On exit, prompt if there are background jobs.
+unsetopt BG_NICE     # Don't run background (&) jobs at a lower priority.
+unsetopt HUP         # Don't kill jobs on shell exit.
 
 # Zle
-unsetopt BEEP               # Hush, don't you beep at me.
+unsetopt BEEP # Hush, don't you beep at me.
