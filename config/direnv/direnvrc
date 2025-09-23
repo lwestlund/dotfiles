@@ -4,12 +4,18 @@ layout_uv() {
     fi
 
     if [[ -z $VIRTUAL_ENV || ! -d $VIRTUAL_ENV ]]; then
-        log_status "No virtual environment exists. Executing \`uv venv\` to create one."
-        uv venv
+        if [[ ! -f "pyproject.toml" ]]; then
+            log_status "No uv project exists. Executing \`uv init\` to create one."
+            uv init --no-readme
+            rm main.py
+            uv venv
+        else
+            uv sync
+        fi
         VIRTUAL_ENV="$(pwd)/.venv"
     fi
 
     PATH_add "$VIRTUAL_ENV/bin"
-    export UV_ACTIVE=1  # or VENV_ACTIVE=1
+    export UV_ACTIVE=1 # or VENV_ACTIVE=1
     export VIRTUAL_ENV
 }
