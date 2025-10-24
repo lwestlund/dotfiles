@@ -6,29 +6,10 @@ rel_dir=$(dirname "$0")
 repo=$(readlink -f "$rel_dir")
 readonly repo
 
+
 ln -sf "$repo"/zshenv ~/.zshenv
 
-function install_config() {
-    function link_config() {
-        ln -sf "$repo"/config/"$1" ~/.config/"$(dirname "$1")"/
-    }
-    link_config alacritty
-    link_config bat
-    link_config direnv
-    link_config git
-    link_config hypr
-    link_config latexmk
-    link_config nvim
-    link_config pipewire
-    link_config shikane
-    link_config swaync
-    install -d ~/.config/systemd/user
-    link_config systemd/user/shikane.service
-    link_config waybar
-    link_config wireplumber
-    link_config zsh
-}
-install_config
+"$repo"/stow.sh
 
 systemctl --user daemon-reload
 systemctl --user enable pipewire.service
