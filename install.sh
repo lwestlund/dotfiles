@@ -38,9 +38,6 @@ systemctl --user enable shikane.service
 systemctl --user enable hyprpolkitagent.service
 systemctl --user enable ssh-agent.service
 
-install -d ~/.local/bin
-ln -sf "$repo"/bin/* ~/.local/bin/
-
 sudo install -m 644 "$repo"/etc/tmpfiles.d/charge_thresholds.conf /etc/tmpfiles.d/
 
 # Pacman hooks
