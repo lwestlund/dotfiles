@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: pub_super
+# uuid:
+# key: ps
+# condition: t
+# --
+pub(super) $0

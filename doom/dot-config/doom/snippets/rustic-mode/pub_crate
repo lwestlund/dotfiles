@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: pub_crate
+# key: pc
+# --
+pub(crate)

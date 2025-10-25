@@ -250,7 +250,7 @@ pkg-emacs() {
         ripgrep
     )
     install-pkg "${packages[@]}"
-    [[ -d ~/.config/doom ]] || git clone https://gitlab.com/lwestlund/doom-emacs-private ~/.config/doom
+    stow doom
     [[ -d ~/.config/emacs ]] || git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
     ~/.config/emacs/bin/doom install --no-env
 }

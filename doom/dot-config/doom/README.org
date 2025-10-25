@@ -1,0 +1,14 @@
+* doom-emacs-private
+My [[https://github.com/hlissner/doom-emacs][Doom Emacs]] configuration.
+
+Installation is easiest with git, simply execute
+#+begin_src shell
+git clone https://gitlab.com/lwestlund/doom-emacs-private ~/.config/doom
+#+end_src
+
+If you didn't already get Doom itself, it is probably installed with something like
+#+begin_src shell
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
+#+end_src
+You can always yolo it and try, if it doesn't work, simply check out [[https://github.com/hlissner/doom-emacs#install][Doom's installation instructions]].
