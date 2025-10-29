@@ -103,6 +103,15 @@ bluetooth() {
         bluez-utils
     )
     install-pkg "${packages[@]}"
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+        --rfkill-unblock)
+            sudo systemctl enable rfkill-unblock@bluetooth
+            ;;
+        esac
+        shift 1
+    done
 }
 
 chat() {
@@ -410,7 +419,7 @@ work() {
 
     if [[ $(cat /etc/hostname) == "burken" ]]; then
         audio
-        bluetooth
+        bluetooth --rfkill-unblock
         chat
         dev-python
         dev-rust
