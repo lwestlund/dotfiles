@@ -334,6 +334,10 @@ pkg-openssh() {
     systemctl --user enable ssh-agent.service
 }
 
+pkg-pipewire-libcamera() {
+    install-pkg pipewire-libcamera
+}
+
 pkg-steam() {
     sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
     sudo pacman -Sy
@@ -423,6 +427,7 @@ work() {
         pkg-git
         pkg-hyprland
         pkg-networkmanager
+        pkg-pipewire-libcamera
         pkg-steam
         pkg-spotify
         pkg-zsh
