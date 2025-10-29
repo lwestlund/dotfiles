@@ -193,7 +193,7 @@ intel-cpu() {
     install-pkg "${packages[@]}"
 }
 
-laptop_power_key_config() {
+laptop-power-key-config() {
     log "Configuring laptop power key"
     sudo sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=suspend/' /etc/systemd/logind.conf
     sudo sed -i 's/#HandlePowerKeyLongPress=ignore/HandlePowerKeyLongPress=poweroff/' /etc/systemd/logind.conf
@@ -432,7 +432,7 @@ work() {
         fi
 
         battery-threshold
-        laptop_power_key_config
+        laptop-power-key-config
 
         audio
         bluetooth
