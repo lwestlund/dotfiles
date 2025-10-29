@@ -298,7 +298,6 @@ pkg-hyprland() {
         qt6-wayland
         swaync # Notification center
         waybar # A decent status bar
-        wofi   # An application launcher
         xdg-desktop-portal-hyprland
 
         # Screen shots
@@ -368,6 +367,11 @@ pkg-spotify() {
 pkg-wireshark() {
     install-pkg wireshark-qt
     sudo usermod -aG wireshark "$(whoami)"
+}
+
+pkg-wofi() {
+    install-pkg wofi
+    stow wofi
 }
 
 pkg-zsh() {
@@ -449,6 +453,7 @@ work() {
         pkg-pipewire-libcamera
         pkg-steam
         pkg-spotify
+        pkg-wofi
         pkg-zsh
         typical
         work
@@ -483,6 +488,7 @@ work() {
         pkg-shikane
         pkg-spotify
         pkg-wireshark
+        pkg-wofi
         pkg-zsh
         typical
         work
