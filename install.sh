@@ -86,8 +86,8 @@ audio() {
     )
     install-pkg-aur "${packages_aur[@]}"
 
-    systemctl --user enable pipewire.service
-    systemctl --user enable wireplumber.service
+    systemctl --user enable --now pipewire.service
+    systemctl --user enable --now wireplumber.service
 }
 
 battery-threshold() {
@@ -107,7 +107,7 @@ bluetooth() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
         --rfkill-unblock)
-            sudo systemctl enable rfkill-unblock@bluetooth
+            sudo systemctl enable --now rfkill-unblock@bluetooth
             ;;
         esac
         shift 1
@@ -314,9 +314,9 @@ pkg-hyprland() {
     stow waybar
 
     systemctl --user daemon-reload
-    systemctl --user enable hyprpolkitagent.service
-    systemctl --user enable shikane.service
-    systemctl --user enable swaync.service
+    systemctl --user enable --now hyprpolkitagent.service
+    systemctl --user enable --now shikane.service
+    systemctl --user enable --now swaync.service
 }
 
 pkg-neovim() {
@@ -344,7 +344,7 @@ pkg-networkmanager() {
 
 pkg-openssh() {
     install-pkg openssh
-    systemctl --user enable ssh-agent.service
+    systemctl --user enable --now ssh-agent.service
 }
 
 pkg-pipewire-libcamera() {
