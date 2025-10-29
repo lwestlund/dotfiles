@@ -294,7 +294,6 @@ pkg-hyprland() {
         hyprlock  # Screen locker
         hyprpaper # Wallpaper setter
         hyprpolkitagent
-        shikane # Automatic monitor handling
         qt5-wayland
         qt6-wayland
         swaync # Notification center
@@ -309,13 +308,11 @@ pkg-hyprland() {
     )
     install-pkg "${packages[@]}"
     stow hypr
-    stow shikane
     stow swaync
     stow waybar
 
     systemctl --user daemon-reload
     systemctl --user enable --now hyprpolkitagent.service
-    systemctl --user enable --now shikane.service
     systemctl --user enable --now swaync.service
 }
 
@@ -349,6 +346,13 @@ pkg-openssh() {
 
 pkg-pipewire-libcamera() {
     install-pkg pipewire-libcamera
+}
+
+pkg-shikane() {
+    install-pkg shikane
+    stow shikane
+    systemctl --user daemon-reload
+    systemctl --user enable --now shikane.service
 }
 
 pkg-steam() {
@@ -476,6 +480,7 @@ work() {
         pkg-hyprland
         pkg-networkmanager --applet
         pkg-openssh
+        pkg-shikane
         pkg-spotify
         pkg-wireshark
         pkg-zsh
