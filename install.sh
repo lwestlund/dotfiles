@@ -441,6 +441,7 @@ work() {
         pkg-git
         pkg-hyprland
         pkg-networkmanager
+        pkg-openssh
         pkg-pipewire-libcamera
         pkg-steam
         pkg-spotify
@@ -474,6 +475,7 @@ work() {
         pkg-git
         pkg-hyprland
         pkg-networkmanager --applet
+        pkg-openssh
         pkg-spotify
         pkg-wireshark
         pkg-zsh
