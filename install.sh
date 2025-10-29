@@ -395,6 +395,7 @@ typical() {
         firefox
         fzf
         htop
+        just
         languagetool
         libreoffice-fresh
         make
