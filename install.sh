@@ -455,6 +455,7 @@ work() {
         pkg-emacs
         pkg-git
         pkg-hyprland
+        pkg-neovim
         pkg-networkmanager
         pkg-openssh
         pkg-pipewire-libcamera
@@ -490,6 +491,7 @@ work() {
         pkg-fprintd
         pkg-git
         pkg-hyprland
+        pkg-neovim
         pkg-networkmanager --applet
         pkg-openssh
         pkg-shikane
