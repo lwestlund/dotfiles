@@ -236,6 +236,10 @@ pkg-calibre() {
     install-pkg calibre
 }
 
+pkg-darktable() {
+    install-pkg darktable
+}
+
 pkg-direnv() {
     install-pkg direnv
     stow direnv
@@ -430,6 +434,7 @@ work() {
         pkg-alacritty
         pkg-bat
         pkg-calibre
+        pkg-darktable
         pkg-direnv
         pkg-docker
         pkg-emacs
