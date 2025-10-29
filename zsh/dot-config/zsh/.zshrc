@@ -38,7 +38,6 @@ if [[ $TERM != dumb ]]; then
         fi
     }
     source_if_exists /usr/bin/aws_zsh_completer.sh # aws-cli-bin
-    source_if_exists /usr/share/zsh/site-functions/_pipenv # python-pipenv
     source_if_exists /usr/share/zsh/site-functions/_just # just
     if [[ -n ${missing_source_files} ]]; then
         echo "missing source files: ${(j:, :)missing_source_files}"
