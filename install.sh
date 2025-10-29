@@ -425,7 +425,12 @@ work() {
     )
     install-pkg "${packages[@]}"
 
-    install-pkg-aur slack-desktop-wayland
+    packages=(
+        aws-cli-bin
+        aws-session-manager-plugin
+        slack-desktop-wayland
+    )
+    install-pkg-aur "${packages[@]}"
 }
 
 (
