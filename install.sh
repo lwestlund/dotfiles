@@ -408,7 +408,7 @@ work() {
 (
     cd "$repo"
 
-    if [[ $(cat /etc/hostname) == "wire" ]]; then
+    if [[ $(cat /etc/hostname) == "burken" ]]; then
         audio
         bluetooth
         chat
