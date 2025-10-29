@@ -335,6 +335,8 @@ pkg-openssh() {
 }
 
 pkg-steam() {
+    sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
+    sudo pacman -Sy
     install-pkg steam
 }
 
