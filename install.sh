@@ -421,6 +421,7 @@ work() {
     packages=(
         kubectl
         kubectx
+        jq
     )
     install-pkg "${packages[@]}"
 
