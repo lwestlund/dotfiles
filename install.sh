@@ -10,12 +10,12 @@ log() {
     opts=()
     while [[ $# -gt 0 ]]; do
         case "$1" in
-            -*)
-                opts+=("$1")
-                ;;
-            *)
-                break
-                ;;
+        -*)
+            opts+=("$1")
+            ;;
+        *)
+            break
+            ;;
         esac
         shift 1
     done
@@ -30,15 +30,16 @@ check-updated() {
     log "Making sure that the system is updated before proceeding... 🧐"
     sudo pacman -Sy
     if [[ -n $(pacman -Qu) ]]; then
-       log -n "System needs updates, perform now? [Y/n] "
-       read -r response
-       case $response in
-           "" | Y | y | yes)
-               sudo pacman -Syu
-               ;;
-           *)
-               exit 1
-       esac
+        log -n "System needs updates, perform now? [Y/n] "
+        read -r response
+        case $response in
+        "" | Y | y | yes)
+            sudo pacman -Syu
+            ;;
+        *)
+            exit 1
+            ;;
+        esac
     fi
     log "System is up-to-date, proceeding ✅"
 }
@@ -56,7 +57,7 @@ install-stow() {
 install-stow
 
 install-pkg-aur() {
-    if ! command -v paru >/dev/null ; then
+    if ! command -v paru >/dev/null; then
         sudo pacman -S --needed --noconfirm git base-devel
         git clone https://aur.archlinux.org/paru.git /tmp/paru
         (
@@ -79,7 +80,7 @@ audio() {
     install-pkg "${packages[@]}"
 
     packages_aur=(
-        pwvucontrol    # Volume control applet for Pipewire
+        pwvucontrol # Volume control applet for Pipewire
     )
     install-pkg-aur "${packages_aur[@]}"
 
@@ -314,12 +315,12 @@ pkg-networkmanager() {
     )
     while [[ $# -gt 0 ]]; do
         case "$1" in
-            --applet)
-                packages+=(network-manager-applet)
-                ;;
-            --vpn)
-                packages+=(networkmanager-openvpn)
-                ;;
+        --applet)
+            packages+=(network-manager-applet)
+            ;;
+        --vpn)
+            packages+=(networkmanager-openvpn)
+            ;;
         esac
         shift 1
     done
