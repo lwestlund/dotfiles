@@ -23,6 +23,8 @@ log() {
     LIGHT_BLUE="\033[1;34m"
     NC="\033[0m"
 
+    # Intended split
+    # shellcheck disable=SC2068
     echo -e ${opts[@]} "${LIGHT_BLUE}>>${NC}" "$@"
 }
 
