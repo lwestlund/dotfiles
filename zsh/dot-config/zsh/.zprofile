@@ -20,6 +20,8 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 export VISUAL=nvim
 
+export HOSTNAME=$(hostnamectl hostname)
+
 if uwsm check may-start; then
     exec uwsm start hyprland.desktop
 fi
