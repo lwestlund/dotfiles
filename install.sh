@@ -311,7 +311,6 @@ pkg-hyprland() {
     stow waybar
 
     systemctl --user daemon-reload
-    systemctl --user enable --now hyprpaper.service
     systemctl --user enable --now hyprpolkitagent.service
     systemctl --user enable --now swaync.service
 }
