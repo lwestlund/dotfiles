@@ -316,6 +316,11 @@ pkg-hyprland() {
     systemctl --user enable --now swaync.service
 }
 
+pkg-kitty() {
+    install-pkg kitty
+    stow kitty
+}
+
 pkg-neovim() {
     install-pkg neovim
     stow nvim
@@ -440,7 +445,6 @@ work() {
         dev-yaml
         fonts
         pacman-extra
-        pkg-alacritty
         pkg-bat
         pkg-calibre
         pkg-darktable
@@ -449,6 +453,7 @@ work() {
         pkg-emacs
         pkg-git
         pkg-hyprland
+        pkg-kitty
         pkg-neovim
         pkg-networkmanager
         pkg-openssh
@@ -475,7 +480,6 @@ work() {
         dev-yaml
         fonts
         pacman-extra
-        pkg-alacritty
         pkg-bat
         pkg-brightnessctl
         pkg-direnv
@@ -484,6 +488,7 @@ work() {
         pkg-fprintd
         pkg-git
         pkg-hyprland
+        pkg-kitty
         pkg-neovim
         pkg-networkmanager --applet
         pkg-openssh
