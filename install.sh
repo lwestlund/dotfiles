@@ -6,6 +6,9 @@ rel_dir=$(dirname "$0")
 repo=$(readlink -f "$rel_dir")
 readonly repo
 
+host=$(hostnamectl hostname)
+readonly host
+
 log() {
     opts=()
     while [[ $# -gt 0 ]]; do
@@ -435,7 +438,7 @@ work() {
 (
     cd "$repo"
 
-    if [[ $(cat /etc/hostname) == "burken" ]]; then
+    if [[ $host == "burken" ]]; then
         audio
         bluetooth --rfkill-unblock
         chat
@@ -463,7 +466,7 @@ work() {
         pkg-zsh
         typical
         work
-    elif [[ $(cat /etc/hostname) == "toaster" ]]; then
+    elif [[ $host == "toaster" ]]; then
         if [[ $(lscpu | grep "Vendor ID") =~ GenuineIntel ]]; then
             intel-cpu
         fi
