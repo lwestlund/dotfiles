@@ -89,6 +89,15 @@ audio() {
     )
     install-pkg-aur "${packages_aur[@]}"
 
+    case "$host" in
+    "burken")
+        stow wireplumber-burken
+        ;;
+    *)
+        log "Unknown host '$host', not applying any wireplumber config"
+        ;;
+    esac
+
     systemctl --user enable --now pipewire.service
     systemctl --user enable --now wireplumber.service
 }
