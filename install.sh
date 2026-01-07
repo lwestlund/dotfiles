@@ -290,9 +290,10 @@ pkg-hyprland() {
 
         uwsm # How we launch it
 
-        hypridle  # Remembers to lock your computer when you don't
-        hyprlock  # Screen locker
-        hyprpaper # Wallpaper setter
+        hypridle     # Remembers to lock your computer when you don't
+        hyprlauncher # Run apps and find emojis, all from the comfort of your keyboard.
+        hyprlock     # Screen locker
+        hyprpaper    # Wallpaper setter
         hyprpolkitagent
         qt5-wayland
         qt6-wayland
@@ -369,11 +370,6 @@ pkg-wireshark() {
     sudo usermod -aG wireshark "$(whoami)"
 }
 
-pkg-wofi() {
-    install-pkg wofi
-    stow wofi
-}
-
 pkg-zsh() {
     install-pkg zsh
     stow zshenv
@@ -413,8 +409,6 @@ typical() {
         zoxide # A smarter cd command
     )
     install-pkg "${packages[@]}"
-
-    install-pkg-aur emote
 }
 
 work() {
@@ -461,7 +455,6 @@ work() {
         pkg-pipewire-libcamera
         pkg-steam
         pkg-spotify
-        pkg-wofi
         pkg-zsh
         typical
         work
@@ -497,7 +490,6 @@ work() {
         pkg-shikane
         pkg-spotify
         pkg-wireshark
-        pkg-wofi
         pkg-zsh
         typical
         work
