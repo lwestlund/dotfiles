@@ -11,17 +11,6 @@ if true then
     },
 
     {
-      "stevearc/conform.nvim",
-      opts = {
-        formatters = {
-          sqlfluff = {
-            args = { "format", "-" },
-          },
-        },
-      },
-    },
-
-    {
       "nvim-lualine/lualine.nvim",
       opts = {
         sections = {
