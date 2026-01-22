@@ -150,81 +150,6 @@ if true then
       end,
     },
 
-    -- Color scheme.
-    {
-      "navarasu/onedark.nvim",
-      opts = {
-        style = "dark",
-        colors = {
-          blue = "#51afef",
-          green = "#98be65",
-          bright_violet = "#C59DD3",
-          violet = "#a9a1e1",
-          orange = "#da8548",
-          orange2 = "#d19a66",
-
-          -- black = "#181a1f",
-          -- bg0 = "#282c34",
-          -- bg1 = "#31353f",
-          -- bg2 = "#393f4a",
-          -- bg3 = "#3b3f4c",
-          -- bg_d = "#21252b",
-          -- bg_blue = "#73b8f1",
-          -- bg_yellow = "#ebd09c",
-          -- fg = "#abb2bf",
-          -- purple = "#c678dd",
-          -- green = "#98c379",
-          -- orange = "#d19a66",
-          -- blue = "#61afef",
-          -- yellow = "#e5c07b",
-          -- cyan = "#56b6c2",
-          -- red = "#e86671",
-          -- grey = "#5c6370",
-          -- light_grey = "#848b98",
-          -- dark_cyan = "#2b6f77",
-          -- dark_red = "#993939",
-          -- dark_yellow = "#93691d",
-          -- dark_purple = "#8a3fa0",
-          -- diff_add = "#31392b",
-          -- diff_delete = "#382b2c",
-          -- diff_change = "#1c3448",
-          -- diff_text = "#2c5372",
-        },
-        highlights = {
-          ["@constructor"] = { fg = "$blue" },
-          ["@function"] = { fg = "$purple" },
-          ["@function.call"] = { fg = "$purple" },
-          ["@keyword"] = { fg = "$blue" },
-          ["@keyword.function"] = { fg = "$blue" },
-          ["@keyword.import"] = { fg = "$blue" },
-          ["@keyword.return"] = { fg = "$blue" },
-          ["@module"] = { fg = "$purple" },
-          ["@lsp.mod.attribute"] = { fg = "$blue" },
-          ["@lsp.type.function"] = { fg = "$purple" },
-          ["@lsp.type.namespace"] = { fg = "$violet" },
-          ["@lsp.type.property"] = { fg = "$purple" },
-          ["@lsp.type.variable"] = { fg = "$bright_violet" },
-          ["@lsp.type.parameter"] = { fg = "$bright_violet" },
-          ["@property"] = { fg = "$purple" },
-          ["@property.toml"] = { fg = "$yellow" },
-          ["MatchParen"] = { fg = "$red", bg = "none" },
-          -- vim-illuminate
-          ["IlluminatedWordWrite"] = { bg = "$diff_text" },
-          ["IlluminatedWordRead"] = { bg = "$dark_cyan" },
-          -- neogit
-          ["NeogitSectionHeader"] = { fg = "$blue" },
-          ["NeogitBranch"] = { fg = "$cyan" },
-          ["NeogitBranchHead"] = { fg = "$cyan" },
-          ["NeogitChangeDeleted"] = { fg = "$red" },
-          ["NeogitChangeModified"] = { fg = "$fg" },
-          ["NeogitPopupSwitchEnabled"] = { fg = "$green" },
-          -- snacks
-          ["SnacksDashboardHeader"] = { fg = "$blue" },
-          ["SnacksDashboardFooter"] = { fg = "$bg_blue" },
-          ["SnacksDashboardSpecial"] = { fg = "$bg_blue" },
-        },
-      },
-    },
     {
       "kylechui/nvim-surround",
       version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
@@ -238,42 +163,6 @@ if true then
             change = "gsc",
           },
         })
-      end,
-    },
-    {
-      "lwestlund/doom-one.nvim",
-      dir = "~/git/doom-one.nvim/",
-      config = function()
-        -- vim.api.nvim_set_hl(0, gcc, val)
-        -- Add color to cursor
-        vim.g.doom_one_cursor_coloring = false
-        -- Set :terminal colors
-        vim.g.doom_one_terminal_colors = true
-        -- Enable italic comments
-        vim.g.doom_one_italic_comments = false
-        -- Enable TS support
-        vim.g.doom_one_enable_treesitter = true
-        -- Color whole diagnostic text or only underline
-        vim.g.doom_one_diagnostics_text_color = false
-        -- Enable transparent background
-        vim.g.doom_one_transparent_background = false
-
-        -- Pumblend transparency
-        vim.g.doom_one_pumblend_enable = false
-        vim.g.doom_one_pumblend_transparency = 20
-
-        -- Plugins integration
-        vim.g.doom_one_plugin_neorg = false
-        vim.g.doom_one_plugin_barbar = false
-        vim.g.doom_one_plugin_telescope = false
-        vim.g.doom_one_plugin_neogit = true
-        vim.g.doom_one_plugin_nvim_tree = false
-        vim.g.doom_one_plugin_dashboard = false
-        vim.g.doom_one_plugin_startify = false
-        vim.g.doom_one_plugin_whichkey = false
-        vim.g.doom_one_plugin_indent_blankline = false
-        vim.g.doom_one_plugin_vim_illuminate = false
-        vim.g.doom_one_plugin_lspsaga = false
       end,
     },
     { "LazyVim/LazyVim", opts = { colorscheme = "doom-one" } },
