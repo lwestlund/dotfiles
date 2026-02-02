@@ -23,6 +23,21 @@ if true then
         },
       },
     },
+    {
+      "folke/trouble.nvim",
+      keys = {
+        {
+          "<leader>cx",
+          "<cmd>Trouble diagnostics toggle<cr>",
+          desc = "Diagnostics (Trouble)",
+        },
+        {
+          "<leader>cX",
+          "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+          desc = "Buffer Diagnostics (Trouble)",
+        },
+      },
+    },
 
     {
       "nvim-lualine/lualine.nvim",
