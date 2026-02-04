@@ -38,6 +38,10 @@ return {
           ["["] = "GoToPreviousHunkHeader",
           ["]"] = "GoToNextHunkHeader",
         },
+        commit_editor = {
+          ["gk"] = "PrevMessage",
+          ["gj"] = "NextMessage",
+        },
       },
     },
   },
