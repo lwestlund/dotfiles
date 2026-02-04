@@ -25,7 +25,7 @@ return {
     opts = {
       graph_style = "kitty",
       remember_settings = false,
-      kind = "replace",
+      kind = "tab",
       commit_editor = {
         kind = "auto",
       },
