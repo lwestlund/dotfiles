@@ -2,6 +2,9 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = {
+      options = {
+        globalstatus = false,
+      },
       theme = "doom-one",
       sections = {
         lualine_x = {},
