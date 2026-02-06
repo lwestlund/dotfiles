@@ -7,6 +7,14 @@ return {
       },
       theme = "doom-one",
       sections = {
+        lualine_a = {
+          {
+            "mode",
+            fmt = function(s)
+              return string.sub(s, 1, 1)
+            end,
+          },
+        },
         lualine_x = {},
         lualine_y = {
           require("snacks").profiler.status(),
