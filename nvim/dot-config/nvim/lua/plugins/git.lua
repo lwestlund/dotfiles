@@ -26,9 +26,6 @@ return {
       graph_style = "kitty",
       remember_settings = false,
       kind = "tab",
-      commit_editor = {
-        kind = "auto",
-      },
       mappings = {
         popup = {
           ["p"] = "PushPopup",
