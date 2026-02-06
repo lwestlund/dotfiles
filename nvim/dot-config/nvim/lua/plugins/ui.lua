@@ -18,30 +18,30 @@ return {
         lualine_x = {},
         lualine_y = {
           require("snacks").profiler.status(),
-            -- stylua: ignore
-            {
-              require("noice").api.status.command.get,
-              cond = require("noice").api.status.command.has,
-              color = function() return { fg = Snacks.util.color("Statement") } end,
-            },
-            -- stylua: ignore
-            {
-              require("noice").api.status.mode.get,
-              cond = require("noice").api.status.mode.has,
-              color = function() return { fg = Snacks.util.color("Constant") } end,
-            },
-            -- stylua: ignore
-            {
-              function() return "  " .. require("dap").status() end,
-              cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-              color = function() return { fg = Snacks.util.color("Debug") } end,
-            },
-            -- stylua: ignore
-            {
-              require("lazy.status").updates,
-              cond = require("lazy.status").has_updates,
-              color = function() return { fg = Snacks.util.color("Special") } end,
-            },
+          -- stylua: ignore
+          {
+            require("noice").api.status.command.get,
+            cond = require("noice").api.status.command.has,
+            color = function() return { fg = Snacks.util.color("Statement") } end,
+          },
+          -- stylua: ignore
+          {
+            require("noice").api.status.mode.get,
+            cond = require("noice").api.status.mode.has,
+            color = function() return { fg = Snacks.util.color("Constant") } end,
+          },
+          -- stylua: ignore
+          {
+            function() return "  " .. require("dap").status() end,
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = function() return { fg = Snacks.util.color("Debug") } end,
+          },
+          -- stylua: ignore
+          {
+            require("lazy.status").updates,
+            cond = require("lazy.status").has_updates,
+            color = function() return { fg = Snacks.util.color("Special") } end,
+          },
           {
             "diff",
             symbols = {
