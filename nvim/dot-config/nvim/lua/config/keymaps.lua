@@ -6,3 +6,8 @@ vim.keymap.set("n", "<leader>'", Snacks.picker.resume, { desc = "Resume last sea
 
 vim.keymap.set("i", "<C-a>", "<C-o>^", { desc = "Move cursor to start of line" })
 vim.keymap.set("i", "<C-e>", "<End>", { desc = "Move cursor to end of line" })
+
+-- Tab switching keymaps
+for i = 1, 9 do
+  vim.keymap.set("n", "<M-" .. i .. ">", i .. "gt", { desc = "Switch to tab " .. i })
+end
