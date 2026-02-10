@@ -21,6 +21,15 @@ if true then
  ]],
           },
         },
+        picker = {
+          win = {
+            input = {
+              keys = {
+                ["<Esc>"] = { "close", mode = { "n", "i" } },
+              },
+            },
+          },
+        },
       },
     },
     {
