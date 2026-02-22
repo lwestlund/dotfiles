@@ -32,10 +32,6 @@ return {
           ["P"] = false,
           ["F"] = "PullPopup",
         },
-        status = {
-          ["["] = "GoToPreviousHunkHeader",
-          ["]"] = "GoToNextHunkHeader",
-        },
         commit_editor = {
           ["gk"] = "PrevMessage",
           ["gj"] = "NextMessage",
