@@ -22,7 +22,7 @@ return {
             align_to = "label",
             columns = {
               { "kind_icon" },
-              { "label", "detail" },
+              { "label", "detail", gap = 2 },
             },
             components = {
               detail = {
