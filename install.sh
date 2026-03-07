@@ -220,6 +220,13 @@ laptop-power-key-config() {
     sudo sed -i 's/#HandlePowerKeyLongPress=ignore/HandlePowerKeyLongPress=poweroff/' /etc/systemd/logind.conf
 }
 
+lazygit() {
+    log "Installing lazygit"
+
+    install-pkg lazygit
+    stow lazygit
+}
+
 pacman-extra() {
     log "Setting up pacman extras"
     packages=(
@@ -456,6 +463,7 @@ work() {
         dev-shell
         dev-yaml
         fonts
+        lazygit
         pacman-extra
         pkg-bat
         pkg-calibre
@@ -491,6 +499,7 @@ work() {
         dev-shell
         dev-yaml
         fonts
+        lazygit
         pacman-extra
         pkg-bat
         pkg-brightnessctl
