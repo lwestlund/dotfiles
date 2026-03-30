@@ -1,0 +1,36 @@
+[general]
+destination = "$HOME/.config/hypr/monitors.conf"
+
+[profiles.laptop]
+config_file = "hyprconfigs/laptop.conf"
+config_file_type = "static"
+[profiles.laptop.conditions]
+
+[[profiles.laptop.conditions.required_monitors]]
+name = "eDP-1"
+
+
+[profiles.mirror_hdmi]
+config_file = "hyprconfigs/laptop_mirror_hdmi.conf"
+config_file_type = "static"
+[profiles.mirror_hdmi.conditions]
+
+[[profiles.mirror_hdmi.conditions.required_monitors]]
+name = "eDP-1"
+
+[[profiles.mirror_hdmi.conditions.required_monitors]]
+name = "HDMI-A-1"
+
+
+[profiles.extended]
+config_file = "hyprconfigs/extended.go.tmpl"
+config_file_type = "template"
+
+[[profiles.extended.conditions.required_monitors]]
+name = "eDP-1"
+monitor_tag = "laptop"
+
+[[profiles.extended.conditions.required_monitors]]
+name = "DP-[13]"
+match_name_using_regex = true
+monitor_tag = "external"

@@ -309,10 +309,11 @@ pkg-hyprland() {
 
         uwsm # How we launch it
 
-        hypridle     # Remembers to lock your computer when you don't
-        hyprlauncher # Run apps and find emojis, all from the comfort of your keyboard.
-        hyprlock     # Screen locker
-        hyprpaper    # Wallpaper setter
+        hyprdynamicmonitors # Dynamic monitor configuration.
+        hypridle            # Remembers to lock your computer when you don't
+        hyprlauncher        # Run apps and find emojis, all from the comfort of your keyboard.
+        hyprlock            # Screen locker
+        hyprpaper           # Wallpaper setter
         hyprpolkitagent
         qt5-wayland
         qt6-wayland
@@ -327,6 +328,7 @@ pkg-hyprland() {
     )
     install-pkg "${packages[@]}"
     stow hypr
+    stow hyprdynamicmonitors
     stow swaync
     stow waybar
 
@@ -513,7 +515,6 @@ work() {
         pkg-neovim
         pkg-networkmanager --applet
         pkg-openssh
-        pkg-shikane
         pkg-spotify
         pkg-wireshark
         pkg-zsh
