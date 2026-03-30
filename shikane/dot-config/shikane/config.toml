@@ -126,12 +126,26 @@ adaptive_sync = false
 [[profile]]
 name = "Work 4K"
 exec = [
-    "notify-send shikane \"Applied profile $SHIKANE_PROFILE_NAME\""
+    "notify-send shikane \"Applied profile $SHIKANE_PROFILE_NAME\"",
 ]
 
 [[profile.output]]
 enable = true
-search = ["n=DP-3"]
+search = [
+  "n/DP-[13]",
+]
+exec = [
+    """
+    hyprctl --batch \"
+        dispatch moveworkspacetomonitor 1 $SHIKANE_OUTPUT_NAME;
+        dispatch moveworkspacetomonitor 2 $SHIKANE_OUTPUT_NAME;
+        dispatch moveworkspacetomonitor 3 $SHIKANE_OUTPUT_NAME;
+        dispatch moveworkspacetomonitor 4 $SHIKANE_OUTPUT_NAME;
+        dispatch moveworkspacetomonitor 5 eDP-1;
+        dispatch moveworkspacetomonitor 10 eDP-1
+        \"
+    """
+]
 mode = "3840x2160@60Hz"
 position = "0,0"
 scale = 1.0
