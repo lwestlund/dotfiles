@@ -5,6 +5,7 @@ return {
       formatters_by_ft = {
         gitcommit = { "commitmsgfmt" },
         rust = { "rustfmt", "dioxus" },
+        proto = { "buf" },
         ["_"] = { "trim_whitespace" },
       },
       formatters = {
