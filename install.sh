@@ -234,6 +234,7 @@ pacman-extra() {
         reflector
     )
     install-pkg "${packages[@]}"
+    systemctl --user enable --now reflector.timer
     sudo stow --target / pacman
 }
 
