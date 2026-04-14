@@ -29,6 +29,11 @@ return {
       commit_view = {
         verify_commit = false,
       },
+      sections = {
+        recent = {
+          folded = false,
+        },
+      },
       mappings = {
         popup = {
           ["p"] = "PushPopup",
