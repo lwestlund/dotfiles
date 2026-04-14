@@ -46,6 +46,34 @@ if true then
           desc = "Buffer Diagnostics (Trouble)",
         },
       },
+      opts = {
+        modes = {
+          symbols_plus = {
+            mode = "symbols", -- Inherit from Trouble's `symbols` mode.
+            filter = {
+              any = {
+                -- Default set of symbol kinds.
+                kind = {
+                  "Class",
+                  "Constructor",
+                  "Enum",
+                  "Field",
+                  "Function",
+                  "Interface",
+                  "Method",
+                  "Module",
+                  "Namespace",
+                  "Object",
+                  "Package",
+                  "Property",
+                  "Struct",
+                  "Trait",
+                },
+              },
+            },
+          },
+        },
+      },
     },
 
     {

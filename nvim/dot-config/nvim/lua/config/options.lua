@@ -2,6 +2,10 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Disable trouble symbols in lualine, I have my own config in the windowbar instead.
+-- TODO: Move trouble config to it's own file.
+vim.g.trouble_lualine = false
+
 local opt = vim.opt
 
 opt.number = false
