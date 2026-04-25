@@ -6,6 +6,7 @@ return {
         gitcommit = { "commitmsgfmt" },
         rust = { "rustfmt", "dioxus" },
         proto = { "buf" },
+        python = { "ruff_format", "ruff_organize_imports" },
         ["_"] = { "trim_whitespace" },
       },
       formatters = {
