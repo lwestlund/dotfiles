@@ -7,6 +7,7 @@ return {
         rust = { "rustfmt", "dioxus" },
         proto = { "buf" },
         python = { "ruff_format", "ruff_organize_imports" },
+        md = { "markdownfmt" },
         ["_"] = { "trim_whitespace" },
       },
       formatters = {
