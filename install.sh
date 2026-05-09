@@ -382,6 +382,11 @@ pkg-shikane() {
     systemctl --user enable --now shikane.service
 }
 
+pkg-starship() {
+    install-pkg starship
+    stow starship
+}
+
 pkg-steam() {
     sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
     sudo pacman -Sy
@@ -481,6 +486,7 @@ work() {
         pkg-networkmanager
         pkg-openssh
         pkg-pipewire-libcamera
+        pkg-starship
         pkg-steam
         pkg-spotify
         pkg-zsh
@@ -517,6 +523,7 @@ work() {
         pkg-networkmanager --applet
         pkg-openssh
         pkg-spotify
+        pkg-starship
         pkg-wireshark
         pkg-zsh
         typical
