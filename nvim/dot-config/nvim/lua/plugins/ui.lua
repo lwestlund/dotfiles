@@ -26,6 +26,11 @@ return {
         hl_group = "lualine_c_normal",
       })
       opts.winbar = { lualine_c = { symbols.get, cond = symbols.has() } }
+      opts.inactive_winbar = { lualine_c = {
+        function()
+          return " "
+        end,
+      } }
     end,
   },
   {
