@@ -27,7 +27,7 @@ $container\
 $character"""
 
 [python]
-format = "${symbol}$virtualenv "
+format = "[${symbol}$virtualenv ]($style)"
 
 [aws]
 symbol = "☁️ "
