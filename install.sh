@@ -316,10 +316,9 @@ pkg-hyprland() {
         hyprlock            # Screen locker
         hyprpaper           # Wallpaper setter
         hyprpolkitagent
+        noctalia # Desktop shell
         qt5-wayland
         qt6-wayland
-        swaync # Notification center
-        waybar # A decent status bar
         xdg-desktop-portal-hyprland
 
         # Screen shots
@@ -330,14 +329,12 @@ pkg-hyprland() {
     install-pkg "${packages[@]}"
     stow hypr
     stow hyprdynamicmonitors
-    stow swaync
-    stow waybar
+    stow noctalia
 
     systemctl --user daemon-reload
     systemctl --user enable --now hypridle.service
     systemctl --user enable --now hyprpaper.service
     systemctl --user enable --now hyprpolkitagent.service
-    systemctl --user enable --now swaync.service
 }
 
 pkg-kitty() {
