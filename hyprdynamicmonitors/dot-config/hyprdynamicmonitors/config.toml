@@ -1,8 +1,8 @@
 [general]
-destination = "$HOME/.config/hypr/monitors.conf"
+destination = "$HOME/.config/hypr/monitors.lua"
 
 [profiles.laptop]
-config_file = "hyprconfigs/laptop.conf"
+config_file = "hyprconfigs/laptop.lua"
 config_file_type = "static"
 [profiles.laptop.conditions]
 
@@ -11,7 +11,7 @@ name = "eDP-1"
 
 
 [profiles.mirror_hdmi]
-config_file = "hyprconfigs/laptop_mirror_hdmi.conf"
+config_file = "hyprconfigs/laptop_mirror_hdmi.lua"
 config_file_type = "static"
 [profiles.mirror_hdmi.conditions]
 
@@ -23,7 +23,7 @@ name = "HDMI-A-1"
 
 
 [profiles.extended]
-config_file = "hyprconfigs/extended.go.tmpl"
+config_file = "hyprconfigs/extended.lua.tmpl"
 config_file_type = "template"
 
 [[profiles.extended.conditions.required_monitors]]

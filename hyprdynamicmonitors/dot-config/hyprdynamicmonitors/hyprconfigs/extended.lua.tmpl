@@ -1,0 +1,24 @@
+{{- $laptop := index .MonitorsByTag "laptop" -}}
+{{- $external := index .MonitorsByTag "external" -}}
+hl.monitor({
+  output = "{{$laptop.Name}}",
+  mode = "1920x1200",
+  position = "960x2160",
+  scale = 1,
+  bitdepth = 8,
+})
+
+hl.monitor({
+  output = "{{$external.Name}}",
+  mode = "3840x2160",
+  position = "0x0",
+  scale = 1,
+  bitdepth = 8,
+})
+
+hl.workspace_rule({ workspace = "1", monitor = "{{$external.Name}}" })
+hl.workspace_rule({ workspace = "2", monitor = "{{$external.Name}}" })
+hl.workspace_rule({ workspace = "3", monitor = "{{$external.Name}}" })
+hl.workspace_rule({ workspace = "4", monitor = "{{$external.Name}}" })
+hl.workspace_rule({ workspace = "5", monitor = "{{$laptop.Name}}" })
+hl.workspace_rule({ workspace = "10", monitor = "{{$laptop.Name}}" })
