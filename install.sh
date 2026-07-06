@@ -310,13 +310,11 @@ pkg-hyprland() {
 
         uwsm # How we launch it
 
-        hyprdynamicmonitors # Dynamic monitor configuration.
-        hypridle            # Remembers to lock your computer when you don't
-        hyprlauncher        # Run apps and find emojis, all from the comfort of your keyboard.
-        hyprlock            # Screen locker
-        hyprpaper           # Wallpaper setter
+        hypridle     # Remembers to lock your computer when you don't
+        hyprlauncher # Run apps and find emojis, all from the comfort of your keyboard.
+        hyprlock     # Screen locker
+        hyprpaper    # Wallpaper setter
         hyprpolkitagent
-        noctalia # Desktop shell
         qt5-wayland
         qt6-wayland
         xdg-desktop-portal-hyprland
@@ -327,6 +325,11 @@ pkg-hyprland() {
         wl-clipboard # Capture to clipboard
     )
     install-pkg "${packages[@]}"
+    packages_aur=(
+        hyprdynamicmonitors-bin # Dynamic monitor configuration. hypridle                # Remembers to lock your computer when you don't
+        noctalia                # Desktop shell
+    )
+    install-pkg-aur "${packages_aur[@]}"
     stow hypr
     stow hyprdynamicmonitors
     stow noctalia
