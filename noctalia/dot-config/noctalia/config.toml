@@ -7,7 +7,6 @@ end = [
     "network",
     "bluetooth",
     "volume",
-    "brightness",
     "battery",
     "control-center"
 ]
