@@ -22,7 +22,7 @@ end
 local terminal = "kitty"
 local lockscreen = "hyprlock"
 local fileManager = "dolphin"
-local menu = "hyprlauncher"
+local menu = "noctalia msg panel-toggle launcher"
 
 -------------------
 ---- AUTOSTART ----

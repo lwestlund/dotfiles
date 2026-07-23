@@ -310,10 +310,9 @@ pkg-hyprland() {
 
         uwsm # How we launch it
 
-        hypridle     # Remembers to lock your computer when you don't
-        hyprlauncher # Run apps and find emojis, all from the comfort of your keyboard.
-        hyprlock     # Screen locker
-        hyprpaper    # Wallpaper setter
+        hypridle  # Remembers to lock your computer when you don't
+        hyprlock  # Screen locker
+        hyprpaper # Wallpaper setter
         hyprpolkitagent
         qt5-wayland
         qt6-wayland
