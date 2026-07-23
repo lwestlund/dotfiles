@@ -21,7 +21,7 @@ end
 -- Set programs that you use
 local terminal = "kitty"
 local lockscreen = "hyprlock"
-local fileManager = "dolphin"
+local fileManager = "nautilus"
 local menu = "noctalia msg panel-toggle launcher"
 
 -------------------
