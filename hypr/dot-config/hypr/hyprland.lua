@@ -318,10 +318,10 @@ end
 
 hl.bind("SUPER + Z", zoom)
 hl.bind("SUPER + mouse_up", function()
-  zoom(-0.1)
+  zoom(0.1)
 end)
 hl.bind("SUPER + mouse_down", function()
-  zoom(0.1)
+  zoom(-0.1)
 end)
 hl.bind("SUPER + KP_ADD", function()
   zoom(0.5)
