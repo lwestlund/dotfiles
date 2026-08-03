@@ -287,13 +287,8 @@ hl.bind(
   { locked = true, repeating = true }
 )
 
-hl.bind("SHIFT + Print", function()
-  hl.plugin.hyprcapture.open()
-end)
-
-hl.bind("CTRL + SHIFT + Print", function()
-  hl.plugin.hyprcapture.open("window")
-end)
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+hl.bind("CTRL + SHIFT + Print", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen"))
 
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("systemctl --user restart waybar.service"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client --toggle-panel"))
