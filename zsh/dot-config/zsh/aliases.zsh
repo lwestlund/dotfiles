@@ -138,3 +138,44 @@ compdef take=mkdir
 zman() {
   PAGER="less -g -I -s '+/^       "$1"'" man zshall
 }
+
+# Decode the header and payload of a JWT read from a file, an argument or stdin.
+jwt-decode() {
+  local token
+  if (( $# )); then
+    if [[ -f "$1" ]]; then
+      token=$(<"$1")
+    else
+      token=$1
+    fi
+  else
+    token=$(</dev/stdin)
+  fi
+
+  # Tolerate wrapped/quoted tokens and an Authorization header prefix.
+  token=${token//[[:space:]]/}
+  token=${token//[\"\']/}
+  token=${token#Bearer}
+
+  local -a parts
+  parts=(${(s:.:)token})
+  if (( ${#parts} < 2 )); then
+    print -ru2 -- "jwt-decode: not a JWT"
+    return 1
+  fi
+
+  local part
+  for part in $parts[1,2]; do
+    # base64url -> base64, then pad to a multiple of 4.
+    part=${part//-/+}
+    part=${part//_//}
+    while (( ${#part} % 4 )); do part+='='; done
+
+    if command -v jq >/dev/null; then
+      print -r -- "$part" | base64 -d | jq . || return 1
+    else
+      print -r -- "$part" | base64 -d || return 1
+      print
+    fi
+  done
+}
