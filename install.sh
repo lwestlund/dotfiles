@@ -91,6 +91,7 @@ audio() {
 
     case "$host" in
     "burken")
+        stow pipewire-burken
         stow wireplumber-burken
         ;;
     *)
