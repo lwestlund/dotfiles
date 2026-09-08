@@ -23,7 +23,7 @@ name = "HDMI-A-1"
 
 
 [profiles.extended]
-config_file = "hyprconfigs/extended.lua.tmpl"
+config_file = "hyprconfigs/extended_4k.lua.tmpl"
 config_file_type = "template"
 
 [[profiles.extended.conditions.required_monitors]]
@@ -33,4 +33,22 @@ monitor_tag = "laptop"
 [[profiles.extended.conditions.required_monitors]]
 name = "DP-[13]"
 match_name_using_regex = true
+monitor_tag = "external"
+
+
+# More specific than `extended`: also matches the monitor description, so it
+# wins the profile score whenever the external display is the Lenovo 2K panel.
+[profiles.extended_2k]
+config_file = "hyprconfigs/extended_2k.lua.tmpl"
+config_file_type = "template"
+
+[[profiles.extended_2k.conditions.required_monitors]]
+name = "eDP-1"
+monitor_tag = "laptop"
+
+[[profiles.extended_2k.conditions.required_monitors]]
+name = "DP-[13]"
+match_name_using_regex = true
+description = "Lenovo"
+match_description_using_regex = true
 monitor_tag = "external"
