@@ -20,7 +20,7 @@ end
 
 -- Set programs that you use
 local terminal = "kitty"
-local lockscreen = "hyprlock"
+local lockscreen = "noctalia msg session lock"
 local fileManager = "nautilus"
 local menu = "noctalia msg panel-toggle launcher"
 
