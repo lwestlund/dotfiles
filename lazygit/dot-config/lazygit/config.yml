@@ -1,4 +1,0 @@
-customCommands:
-  - key: 'F'
-    command: 'git pull --rebase --autostash'
-    context: 'status, files, localBranches'
