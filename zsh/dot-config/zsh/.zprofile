@@ -27,6 +27,6 @@ export MANPAGER="sh -c 'col -bx | bat -plman'"
 
 export HOSTNAME=$(hostnamectl hostname)
 
-if uwsm check may-start; then
+if uwsm check may-start -q; then
     exec uwsm start hyprland.desktop
 fi
