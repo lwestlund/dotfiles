@@ -289,6 +289,12 @@ pkg-fprintd() {
     install-pkg fprintd
 }
 
+pkg-ghostty() {
+    install-pkg ghostty
+    stow ghostty
+    systemctl --user enable --now app-com.mitchellh.ghostty.service
+}
+
 pkg-git() {
     packages=(
         git
@@ -471,6 +477,7 @@ work() {
         pkg-docker
         pkg-emacs
         pkg-git
+        pkg-ghostty
         pkg-hyprland
         pkg-kitty
         pkg-neovim
@@ -507,6 +514,7 @@ work() {
         pkg-emacs
         pkg-fprintd
         pkg-git
+        pkg-ghostty
         pkg-hyprland
         pkg-kitty
         pkg-neovim

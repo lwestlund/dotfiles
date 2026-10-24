@@ -1,0 +1,4 @@
+theme = Doom One
+cursor-style-blink = false
+
+quit-after-last-window-closed = false
