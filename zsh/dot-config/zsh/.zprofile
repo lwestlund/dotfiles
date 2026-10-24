@@ -20,6 +20,11 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 export VISUAL=nvim
 
+# groff's ANSI escapes confuse bat's man highlighter (stray `[24m` etc.).
+# -c makes groff use backspace overstrikes instead, which col -bx strips.
+export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat -plman'"
+
 export HOSTNAME=$(hostnamectl hostname)
 
 if uwsm check may-start; then
